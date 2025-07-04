@@ -25,6 +25,7 @@ return new class extends Migration
             $table->boolean('activo')->default(true);
             $table->integer('dificultad')->default(1);
             $table->string('icono', 100)->nullable();
+            $table->json('objetivos_relacionados')->nullable();
             $table->timestamps();
         });
     }
