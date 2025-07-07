@@ -76,7 +76,7 @@ class RegistroConsumoController extends Controller
         $calorias_totales = $plato->calorias_por_porcion * $request->porciones;
 
         $registro = RegistroConsumo::create([
-            'id_usuario' => Auth::id(),
+            'id_usuario' => 1, // Asignación fija para pruebas sin login
             'id_plato' => $request->id_plato,
             'fecha_consumo' => $request->fecha_consumo,
             'hora_consumo' => $request->hora_consumo,
