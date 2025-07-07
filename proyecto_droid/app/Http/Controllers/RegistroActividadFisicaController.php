@@ -78,7 +78,7 @@ class RegistroActividadFisicaController extends Controller
         }
 
         $registro = RegistroActividadFisica::create([
-            'id_usuario' => Auth::id(),
+            'id_usuario' => 1, // Fijo para pruebas sin login
             'id_tipo_ejercicio' => $request->id_tipo_ejercicio,
             'id_rutina' => $request->id_rutina,
             'fecha_actividad' => $request->fecha_actividad,
