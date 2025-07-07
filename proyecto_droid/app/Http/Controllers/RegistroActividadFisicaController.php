@@ -18,7 +18,7 @@ class RegistroActividadFisicaController extends Controller
     public function index(): JsonResponse
     {
         $registros = RegistroActividadFisica::with(['tipoEjercicio', 'rutinaEjercicio'])
-            ->where('id_usuario', Auth::id())
+            ->where('id_usuario', 1) // Fijo para pruebas sin login
             ->orderBy('fecha_actividad', 'desc')
             ->orderBy('hora_inicio', 'desc')
             ->get();
