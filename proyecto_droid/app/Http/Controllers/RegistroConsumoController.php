@@ -17,7 +17,7 @@ class RegistroConsumoController extends Controller
     public function index(): JsonResponse
     {
         $registros = RegistroConsumo::with(['plato.lugar', 'plato.categoria'])
-            ->where('id_usuario', Auth::id())
+            ->where('id_usuario', 1) // Fijo para pruebas sin login
             ->orderBy('fecha_consumo', 'desc')
             ->orderBy('hora_consumo', 'desc')
             ->get();

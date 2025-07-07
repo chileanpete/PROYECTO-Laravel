@@ -18,4 +18,17 @@ class Plato extends Model
     {
         return $this->belongsTo(CategoriaComida::class, 'id_categoria', 'id_categoria');
     }
+
+    public function getEsVegetarianoAttribute($value)
+    {
+        return (bool) $value;
+    }
+    public function getEsVeganoAttribute($value)
+    {
+        return (bool) $value;
+    }
+    public function getSinGlutenAttribute($value)
+    {
+        return (bool) $value;
+    }
 }
