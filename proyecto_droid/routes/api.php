@@ -25,6 +25,7 @@ Route::prefix('registro-consumo')->group(function () {
     Route::put('/{id}', [RegistroConsumoController::class, 'update']);
     Route::delete('/{id}', [RegistroConsumoController::class, 'destroy']);
     Route::get('/estadisticas', [RegistroConsumoController::class, 'estadisticas']);
+    Route::get('/exportar/pdf', [RegistroConsumoController::class, 'exportarPDF']);
 });
 
 // Rutas de Registro de Actividad Física
@@ -37,6 +38,7 @@ Route::prefix('registro-actividad')->group(function () {
     Route::get('/estadisticas', [RegistroActividadFisicaController::class, 'estadisticas']);
     Route::get('/tipos-ejercicio', [RegistroActividadFisicaController::class, 'tiposEjercicio']);
     Route::get('/rutinas-ejercicio', [RegistroActividadFisicaController::class, 'rutinasEjercicio']);
+    Route::get('/exportar/pdf', [RegistroActividadFisicaController::class, 'exportarPDF']);
 });
 
 // Rutas de Inscripciones a Talleres

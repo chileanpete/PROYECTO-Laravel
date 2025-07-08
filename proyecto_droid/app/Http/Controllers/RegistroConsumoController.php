@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\RegistroConsumo;
 use App\Models\Plato;
+use App\Models\ExportacionDatos;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class RegistroConsumoController extends Controller
 {
@@ -221,5 +223,63 @@ class RegistroConsumoController extends Controller
             'success' => true,
             'data' => $estadisticas
         ]);
+    }
+
+    /**
+     * Exportar registros de consumo a PDF
+     */
+    public function exportarPDF(): JsonResponse
+    {
+        try {
+            $registros = RegistroConsumo::with(['plato.lugar', 'plato.categoria'])
+                ->where('id_usuario', 1)
+                ->orderBy('fecha_consumo', 'desc')
+                ->orderBy('hora_consumo', 'desc')
+                ->get();
+
+            $totalCalorias = $registros->sum('calorias_totales');
+            $totalRegistros = $registros->count();
+
+            $html = view('pdf.registros-consumo', [
+                'registros' => $registros,
+                'totalCalorias' => $totalCalorias,
+                'totalRegistros' => $totalRegistros,
+                'fechaExportacion' => now()->format('d/m/Y H:i:s')
+            ])->render();
+
+            $pdf = PDF::loadHTML($html);
+            $pdf->setPaper('A4', 'portrait');
+
+            $filename = 'registros_consumo_' . now()->format('Y-m-d_H-i-s') . '.pdf';
+            $pdfContent = $pdf->output();
+            
+            // Registrar la exportación en la base de datos
+            ExportacionDatos::create([
+                'id_usuario' => 1,
+                'tipo_exportacion' => 'consumo_pdf',
+                'fecha_exportacion' => now(),
+                'fecha_inicio_datos' => $registros->min('fecha_consumo') ?: now()->toDateString(),
+                'fecha_fin_datos' => $registros->max('fecha_consumo') ?: now()->toDateString(),
+                'archivo_generado' => $filename,
+                'compartido' => false
+            ]);
+            
+            return response()->json([
+                'success' => true,
+                'message' => 'PDF generado exitosamente',
+                'data' => [
+                    'filename' => $filename,
+                    'content' => base64_encode($pdfContent)
+                ]
+            ]);
+
+        } catch (\Exception $e) {
+            \Log::error("Error al exportar PDF de consumo: " . $e->getMessage());
+            
+            return response()->json([
+                'success' => false,
+                'message' => 'Error al generar PDF: ' . $e->getMessage()
+            ], 500);
+        }
     }
 }

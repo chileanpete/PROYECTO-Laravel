@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Registros de Actividad Física</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #666;
+        }
+        .summary {
+            background-color: #f5f5f5;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .summary-item {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .summary-label {
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th {
+            background-color: #333;
+            color: white;
+            padding: 8px;
+            text-align: left;
+            font-weight: bold;
+        }
+        td {
+            padding: 6px 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 10px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-style: italic;
+        }
+        .status-completed {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .status-pending {
+            color: #ffc107;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title">Registros de Actividad Física</div>
+        <div class="subtitle">Reporte generado el {{ $fechaExportacion }}</div>
+    </div>
+
+    <div class="summary">
+        <div class="summary-item">
+            <span class="summary-label">Total de registros:</span> {{ $totalRegistros }}
+        </div>
+        <div class="summary-item">
+            <span class="summary-label">Total de calorías quemadas:</span> {{ number_format($totalCaloriasQuemadas) }} kcal
+        </div>
+        <div class="summary-item">
+            <span class="summary-label">Total de minutos:</span> {{ number_format($totalMinutos) }} min
+        </div>
+    </div>
+
+    @if($registros->count() > 0)
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Tipo de Ejercicio</th>
+                    <th>Duración</th>
+                    <th>Calorías</th>
+                    <th>Intensidad</th>
+                    <th>Estado</th>
+                    <th>Comentario</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($registros as $registro)
+                    <tr>
+                        <td>{{ \Carbon\Carbon::parse($registro->fecha_actividad)->format('d/m/Y') }}</td>
+                        <td>{{ $registro->hora_inicio }} - {{ $registro->hora_fin }}</td>
+                        <td>
+                            @if($registro->tipoEjercicio)
+                                {{ $registro->tipoEjercicio->nombre }}
+                            @elseif($registro->rutinaEjercicio)
+                                {{ $registro->rutinaEjercicio->nombre }}
+                            @else
+                                Ejercicio general
+                            @endif
+                        </td>
+                        <td>{{ $registro->duracion_minutos }} min</td>
+                        <td>{{ $registro->calorias_quemadas }} kcal</td>
+                        <td>
+                            @for($i = 1; $i <= 5; $i++)
+                                @if($i <= $registro->intensidad)
+                                    ●
+                                @else
+                                    ○
+                                @endif
+                            @endfor
+                        </td>
+                        <td class="{{ $registro->completada ? 'status-completed' : 'status-pending' }}">
+                            {{ $registro->completada ? 'Completada' : 'Pendiente' }}
+                        </td>
+                        <td>{{ $registro->comentario ?: '-' }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    @else
+        <div class="no-data">
+            No hay registros de actividad física para mostrar.
+        </div>
+    @endif
+
+    <div class="footer">
+        <p>Este reporte fue generado automáticamente por el sistema de seguimiento de actividad física.</p>
+        <p>Página 1 de 1</p>
+    </div>
+</body>
+</html> 
