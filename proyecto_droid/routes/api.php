@@ -280,10 +280,28 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 });
 
-// Ruta de prueba
+// Ruta de prueba pública
 Route::get('/test', function () {
     return response()->json([
         'message' => 'API funcionando correctamente',
         'timestamp' => now()
     ]);
 });
+
+// Ruta de prueba autenticada
+Route::get('/test-auth', function () {
+    return response()->json([
+        'message' => 'Autenticación exitosa',
+        'user' => auth()->user(),
+        'timestamp' => now()
+    ]);
+})->middleware('auth:sanctum');
+
+// Ruta de prueba con token específico
+Route::get('/test-token', function () {
+    return response()->json([
+        'message' => 'Token verificado correctamente',
+        'token' => request()->bearerToken(),
+        'timestamp' => now()
+    ]);
+})->middleware('verify.api.token');

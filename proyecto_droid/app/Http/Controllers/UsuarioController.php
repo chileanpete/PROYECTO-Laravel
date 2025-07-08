@@ -20,9 +20,16 @@ class UsuarioController extends Controller
             ->where('activo', true)
             ->paginate(15);
 
-        return response()->json([
+        $response = response()->json([
             'success' => true,
             'data' => $usuarios
+        ]);
+
+        // Aplicar headers personalizados
+        return $this->setCustomHeaders($response, [
+            'X-Total-Count' => $usuarios->total(),
+            'X-Page-Current' => $usuarios->currentPage(),
+            'X-Page-Last' => $usuarios->lastPage(),
         ]);
     }
 

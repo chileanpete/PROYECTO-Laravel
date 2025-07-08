@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Laravel\Sanctum\HasApiTokens;
 
 class Usuario extends Model
 {
+    use HasApiTokens;
+    
     protected $table = 'usuarios';
     protected $primaryKey = 'id_usuario';
     
