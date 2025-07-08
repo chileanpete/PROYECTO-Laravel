@@ -10,19 +10,39 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Barryvdh\DomPDF\Facade\Pdf;
+use App\Models\Usuario;
 
 class RegistroConsumoController extends Controller
 {
     /**
-     * Obtener todos los registros de consumo del usuario autenticado
+     * Obtener todos los registros de consumo
      */
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
-        $registros = RegistroConsumo::with(['plato.lugar', 'plato.categoria'])
-            ->where('id_usuario', 1) // Fijo para pruebas sin login
-            ->orderBy('fecha_consumo', 'desc')
-            ->orderBy('hora_consumo', 'desc')
-            ->get();
+        $query = RegistroConsumo::with([
+            'usuario', 'plato.lugar', 'plato.categoria'
+        ]);
+
+        // Filtrar por usuario
+        if ($request->has('id_usuario')) {
+            $query->where('id_usuario', $request->id_usuario);
+        }
+
+        // Filtrar por fecha
+        if ($request->has('fecha_inicio')) {
+            $query->where('fecha_consumo', '>=', $request->fecha_inicio);
+        }
+
+        if ($request->has('fecha_fin')) {
+            $query->where('fecha_consumo', '<=', $request->fecha_fin);
+        }
+
+        // Filtrar por tipo de comida
+        if ($request->has('tipo_comida')) {
+            $query->where('tipo_comida', $request->tipo_comida);
+        }
+
+        $registros = $query->orderBy('fecha_consumo', 'desc')->paginate(20);
 
         return response()->json([
             'success' => true,
@@ -33,16 +53,16 @@ class RegistroConsumoController extends Controller
     /**
      * Obtener un registro específico
      */
-    public function show($id): JsonResponse
+    public function show(int $id): JsonResponse
     {
-        $registro = RegistroConsumo::with(['plato.lugar', 'plato.categoria'])
-            ->where('id_usuario', 1)
-            ->find($id);
+        $registro = RegistroConsumo::with([
+            'usuario', 'plato.lugar', 'plato.categoria'
+        ])->find($id);
 
         if (!$registro) {
             return response()->json([
                 'success' => false,
-                'message' => 'Registro no encontrado'
+                'message' => 'Registro de consumo no encontrado'
             ], 404);
         }
 
@@ -58,165 +78,146 @@ class RegistroConsumoController extends Controller
     public function store(Request $request): JsonResponse
     {
         $validator = Validator::make($request->all(), [
+            'id_usuario' => 'required|exists:usuarios,id_usuario',
             'id_plato' => 'required|exists:platos,id_plato',
             'fecha_consumo' => 'required|date',
             'hora_consumo' => 'required|date_format:H:i',
-            'porciones' => 'required|numeric|min:0.1|max:10',
-            'valoracion' => 'nullable|integer|min:1|max:5',
-            'comentario' => 'nullable|string|max:500'
+            'tipo_comida' => 'required|in:desayuno,almuerzo,cena,refrigerio',
+            'porcion_consumida' => 'required|numeric|min:0.1|max:10',
+            'calorias_consumidas' => 'required|integer|min:0',
+            'comentario' => 'nullable|string',
+            'satisfaccion' => 'integer|min:1|max:5'
         ]);
 
         if ($validator->fails()) {
             return response()->json([
                 'success' => false,
-                'message' => 'Datos inválidos',
+                'message' => 'Datos de validación incorrectos',
                 'errors' => $validator->errors()
             ], 422);
         }
 
-        $plato = Plato::find($request->id_plato);
-        $calorias_totales = $plato->calorias_por_porcion * $request->porciones;
-
         $registro = RegistroConsumo::create([
-            'id_usuario' => 1, // Asignación fija para pruebas sin login
+            'id_usuario' => $request->id_usuario,
             'id_plato' => $request->id_plato,
             'fecha_consumo' => $request->fecha_consumo,
             'hora_consumo' => $request->hora_consumo,
-            'porciones' => $request->porciones,
-            'calorias_totales' => $calorias_totales,
-            'valoracion' => $request->valoracion,
+            'tipo_comida' => $request->tipo_comida,
+            'porcion_consumida' => $request->porcion_consumida,
+            'calorias_consumidas' => $request->calorias_consumidas,
             'comentario' => $request->comentario,
-            'puntos_obtenidos' => 10 // Puntos por registrar consumo
+            'satisfaccion' => $request->satisfaccion ?? 3
         ]);
 
         return response()->json([
             'success' => true,
             'message' => 'Registro de consumo creado exitosamente',
-            'data' => $registro->load(['plato.lugar', 'plato.categoria'])
+            'data' => $registro->load(['usuario', 'plato.lugar', 'plato.categoria'])
         ], 201);
     }
 
     /**
      * Actualizar un registro de consumo
      */
-    public function update(Request $request, $id): JsonResponse
+    public function update(Request $request, int $id): JsonResponse
     {
-        $registro = RegistroConsumo::where('id_usuario', 1)->find($id);
+        $registro = RegistroConsumo::find($id);
 
         if (!$registro) {
             return response()->json([
                 'success' => false,
-                'message' => 'Registro no encontrado'
+                'message' => 'Registro de consumo no encontrado'
             ], 404);
         }
 
         $validator = Validator::make($request->all(), [
-            'id_plato' => 'sometimes|exists:platos,id_plato',
-            'fecha_consumo' => 'sometimes|date',
-            'hora_consumo' => 'sometimes|date_format:H:i',
-            'porciones' => 'sometimes|numeric|min:0.1|max:10',
-            'valoracion' => 'nullable|integer|min:1|max:5',
-            'comentario' => 'nullable|string|max:500'
+            'id_plato' => 'exists:platos,id_plato',
+            'fecha_consumo' => 'date',
+            'hora_consumo' => 'date_format:H:i',
+            'tipo_comida' => 'in:desayuno,almuerzo,cena,refrigerio',
+            'porcion_consumida' => 'numeric|min:0.1|max:10',
+            'calorias_consumidas' => 'integer|min:0',
+            'comentario' => 'nullable|string',
+            'satisfaccion' => 'integer|min:1|max:5'
         ]);
 
         if ($validator->fails()) {
             return response()->json([
                 'success' => false,
-                'message' => 'Datos inválidos',
+                'message' => 'Datos de validación incorrectos',
                 'errors' => $validator->errors()
             ], 422);
         }
 
-        $data = $request->only(['fecha_consumo', 'hora_consumo', 'porciones', 'valoracion', 'comentario']);
-        
-        if ($request->has('id_plato')) {
-            $data['id_plato'] = $request->id_plato;
-            $plato = Plato::find($request->id_plato);
-            $data['calorias_totales'] = $plato->calorias_por_porcion * ($request->porciones ?? $registro->porciones);
-        }
-
-        $registro->update($data);
+        $registro->update($request->only([
+            'id_plato', 'fecha_consumo', 'hora_consumo', 'tipo_comida',
+            'porcion_consumida', 'calorias_consumidas', 'comentario', 'satisfaccion'
+        ]));
 
         return response()->json([
             'success' => true,
             'message' => 'Registro de consumo actualizado exitosamente',
-            'data' => $registro->load(['plato.lugar', 'plato.categoria'])
+            'data' => $registro->load(['usuario', 'plato.lugar', 'plato.categoria'])
         ]);
     }
 
     /**
      * Eliminar un registro de consumo
      */
-    public function destroy($id): JsonResponse
+    public function destroy(int $id): JsonResponse
     {
-        try {
-            \Log::info("Intentando eliminar registro de consumo con ID: $id");
-            
-            $registro = RegistroConsumo::where('id_usuario', 1)->find($id);
-            
-            \Log::info("Registro encontrado: " . ($registro ? 'Sí' : 'No'));
+        $registro = RegistroConsumo::find($id);
 
-            if (!$registro) {
-                \Log::warning("Registro no encontrado con ID: $id");
-                return response()->json([
-                    'success' => false,
-                    'message' => 'Registro no encontrado'
-                ], 404);
-            }
-
-            \Log::info("Eliminando registro con ID: " . $registro->id_consumo);
-            $registro->delete();
-            \Log::info("Registro eliminado exitosamente");
-
-            return response()->json([
-                'success' => true,
-                'message' => 'Registro de consumo eliminado exitosamente'
-            ]);
-        } catch (\Exception $e) {
-            \Log::error("Error al eliminar registro de consumo: " . $e->getMessage());
-            \Log::error("Stack trace: " . $e->getTraceAsString());
-            
+        if (!$registro) {
             return response()->json([
                 'success' => false,
-                'message' => 'Error interno del servidor: ' . $e->getMessage()
-            ], 500);
+                'message' => 'Registro de consumo no encontrado'
+            ], 404);
         }
+
+        $registro->delete();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Registro de consumo eliminado exitosamente'
+        ]);
     }
 
     /**
-     * Obtener estadísticas de consumo del usuario
+     * Obtener estadísticas de consumo de un usuario
      */
-    public function estadisticas(): JsonResponse
+    public function estadisticas(int $idUsuario): JsonResponse
     {
-        $hoy = now()->toDateString();
-        $semana = now()->subDays(7)->toDateString();
-        $mes = now()->subDays(30)->toDateString();
+        $usuario = Usuario::find($idUsuario);
+
+        if (!$usuario) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Usuario no encontrado'
+            ], 404);
+        }
+
+        $registros = $usuario->registrosConsumo();
 
         $estadisticas = [
-            'hoy' => [
-                'total_calorias' => RegistroConsumo::where('id_usuario', 1)
-                    ->where('fecha_consumo', $hoy)
-                    ->sum('calorias_totales'),
-                'total_registros' => RegistroConsumo::where('id_usuario', 1)
-                    ->where('fecha_consumo', $hoy)
-                    ->count()
-            ],
-            'semana' => [
-                'total_calorias' => RegistroConsumo::where('id_usuario', 1)
-                    ->whereBetween('fecha_consumo', [$semana, $hoy])
-                    ->sum('calorias_totales'),
-                'total_registros' => RegistroConsumo::where('id_usuario', 1)
-                    ->whereBetween('fecha_consumo', [$semana, $hoy])
-                    ->count()
-            ],
-            'mes' => [
-                'total_calorias' => RegistroConsumo::where('id_usuario', 1)
-                    ->whereBetween('fecha_consumo', [$mes, $hoy])
-                    ->sum('calorias_totales'),
-                'total_registros' => RegistroConsumo::where('id_usuario', 1)
-                    ->whereBetween('fecha_consumo', [$mes, $hoy])
-                    ->count()
-            ]
+            'total_consumos' => $registros->count(),
+            'total_calorias' => $registros->sum('calorias_consumidas'),
+            'promedio_satisfaccion' => round($registros->avg('satisfaccion'), 2),
+            'consumos_ultima_semana' => $registros->where('fecha_consumo', '>=', now()->subWeek())->count(),
+            'consumos_ultimo_mes' => $registros->where('fecha_consumo', '>=', now()->subMonth())->count(),
+            'por_tipo_comida' => $registros->selectRaw('tipo_comida, COUNT(*) as total, SUM(calorias_consumidas) as calorias_totales')
+                ->groupBy('tipo_comida')
+                ->get(),
+            'platos_mas_consumidos' => $registros->with('plato')
+                ->selectRaw('id_plato, COUNT(*) as total')
+                ->groupBy('id_plato')
+                ->orderBy('total', 'desc')
+                ->limit(5)
+                ->get(),
+            'promedio_calorias_diarias' => $registros->where('fecha_consumo', '>=', now()->subWeek())
+                ->selectRaw('fecha_consumo, SUM(calorias_consumidas) as calorias_dia')
+                ->groupBy('fecha_consumo')
+                ->avg('calorias_dia')
         ];
 
         return response()->json([
