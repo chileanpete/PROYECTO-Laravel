@@ -31,6 +31,7 @@ use App\Http\Controllers\InscripcionTallerController;
 // Rutas públicas
 Route::post('/usuarios/login', [UsuarioController::class, 'login']);
 Route::post('/usuarios/registro', [UsuarioController::class, 'store']);
+Route::get('/desafios', [DesafioController::class, 'index']);
 
 // Rutas protegidas (requieren autenticación)
 Route::middleware('auth:sanctum')->group(function () {
@@ -116,7 +117,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // Desafíos
     Route::prefix('desafios')->group(function () {
-        Route::get('/', [DesafioController::class, 'index']);
+        // Route::get('/', [DesafioController::class, 'index']); // <-- COMENTADA PARA EVITAR CONFLICTO
         Route::get('/{id}', [DesafioController::class, 'show']);
         Route::post('/', [DesafioController::class, 'store']);
         Route::put('/{id}', [DesafioController::class, 'update']);

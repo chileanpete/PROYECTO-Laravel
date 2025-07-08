@@ -22,7 +22,8 @@ class DesafioSeeder extends Seeder
                 'fecha_fin' => now()->addDays(30)->toDateString(),
                 'dificultad' => 3,
                 'activo' => true,
-                'icono' => 'fitness'
+                'icono' => 'fitness',
+                'objetivos_relacionados' => ['Mejorar salud cardiovascular', 'Aumentar fuerza muscular']
             ],
             [
                 'titulo' => 'Desafío de Nutrición',
@@ -36,7 +37,8 @@ class DesafioSeeder extends Seeder
                 'fecha_fin' => now()->addDays(21)->toDateString(),
                 'dificultad' => 2,
                 'activo' => true,
-                'icono' => 'nutrition'
+                'icono' => 'nutrition',
+                'objetivos_relacionados' => ['Perder peso', 'Mejorar salud cardiovascular']
             ],
             [
                 'titulo' => 'Pérdida de Peso',
@@ -50,7 +52,8 @@ class DesafioSeeder extends Seeder
                 'fecha_fin' => now()->addDays(28)->toDateString(),
                 'dificultad' => 4,
                 'activo' => true,
-                'icono' => 'weight'
+                'icono' => 'weight',
+                'objetivos_relacionados' => ['Perder peso']
             ],
             [
                 'titulo' => 'Consistencia Diaria',
@@ -64,7 +67,8 @@ class DesafioSeeder extends Seeder
                 'fecha_fin' => now()->addDays(14)->toDateString(),
                 'dificultad' => 1,
                 'activo' => true,
-                'icono' => 'consistency'
+                'icono' => 'consistency',
+                'objetivos_relacionados' => ['Mejorar salud cardiovascular', 'Consistencia']
             ],
         ];
 
