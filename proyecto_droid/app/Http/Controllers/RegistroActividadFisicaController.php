@@ -104,7 +104,7 @@ class RegistroActividadFisicaController extends Controller
      */
     public function update(Request $request, $id): JsonResponse
     {
-        $registro = RegistroActividadFisica::where('id_usuario', Auth::id())->find($id);
+        $registro = RegistroActividadFisica::where('id_usuario', 1)->find($id);
 
         if (!$registro) {
             return response()->json([
@@ -158,21 +158,38 @@ class RegistroActividadFisicaController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $registro = RegistroActividadFisica::where('id_usuario', Auth::id())->find($id);
+        try {
+            \Log::info("Intentando eliminar registro de actividad física con ID: $id");
+            
+            $registro = RegistroActividadFisica::where('id_usuario', 1)->find($id);
+            
+            \Log::info("Registro encontrado: " . ($registro ? 'Sí' : 'No'));
 
-        if (!$registro) {
+            if (!$registro) {
+                \Log::warning("Registro no encontrado con ID: $id");
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Registro no encontrado'
+                ], 404);
+            }
+
+            \Log::info("Eliminando registro con ID: " . $registro->id_actividad);
+            $registro->delete();
+            \Log::info("Registro eliminado exitosamente");
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Registro de actividad física eliminado exitosamente'
+            ]);
+        } catch (\Exception $e) {
+            \Log::error("Error al eliminar registro de actividad física: " . $e->getMessage());
+            \Log::error("Stack trace: " . $e->getTraceAsString());
+            
             return response()->json([
                 'success' => false,
-                'message' => 'Registro no encontrado'
-            ], 404);
+                'message' => 'Error interno del servidor: ' . $e->getMessage()
+            ], 500);
         }
-
-        $registro->delete();
-
-        return response()->json([
-            'success' => true,
-            'message' => 'Registro de actividad física eliminado exitosamente'
-        ]);
     }
 
     /**
@@ -186,35 +203,35 @@ class RegistroActividadFisicaController extends Controller
 
         $estadisticas = [
             'hoy' => [
-                'total_calorias_quemadas' => RegistroActividadFisica::where('id_usuario', Auth::id())
+                'total_calorias_quemadas' => RegistroActividadFisica::where('id_usuario', 1)
                     ->where('fecha_actividad', $hoy)
                     ->sum('calorias_quemadas'),
-                'total_minutos' => RegistroActividadFisica::where('id_usuario', Auth::id())
+                'total_minutos' => RegistroActividadFisica::where('id_usuario', 1)
                     ->where('fecha_actividad', $hoy)
                     ->sum('duracion_minutos'),
-                'total_actividades' => RegistroActividadFisica::where('id_usuario', Auth::id())
+                'total_actividades' => RegistroActividadFisica::where('id_usuario', 1)
                     ->where('fecha_actividad', $hoy)
                     ->count()
             ],
             'semana' => [
-                'total_calorias_quemadas' => RegistroActividadFisica::where('id_usuario', Auth::id())
+                'total_calorias_quemadas' => RegistroActividadFisica::where('id_usuario', 1)
                     ->whereBetween('fecha_actividad', [$semana, $hoy])
                     ->sum('calorias_quemadas'),
-                'total_minutos' => RegistroActividadFisica::where('id_usuario', Auth::id())
+                'total_minutos' => RegistroActividadFisica::where('id_usuario', 1)
                     ->whereBetween('fecha_actividad', [$semana, $hoy])
                     ->sum('duracion_minutos'),
-                'total_actividades' => RegistroActividadFisica::where('id_usuario', Auth::id())
+                'total_actividades' => RegistroActividadFisica::where('id_usuario', 1)
                     ->whereBetween('fecha_actividad', [$semana, $hoy])
                     ->count()
             ],
             'mes' => [
-                'total_calorias_quemadas' => RegistroActividadFisica::where('id_usuario', Auth::id())
+                'total_calorias_quemadas' => RegistroActividadFisica::where('id_usuario', 1)
                     ->whereBetween('fecha_actividad', [$mes, $hoy])
                     ->sum('calorias_quemadas'),
-                'total_minutos' => RegistroActividadFisica::where('id_usuario', Auth::id())
+                'total_minutos' => RegistroActividadFisica::where('id_usuario', 1)
                     ->whereBetween('fecha_actividad', [$mes, $hoy])
                     ->sum('duracion_minutos'),
-                'total_actividades' => RegistroActividadFisica::where('id_usuario', Auth::id())
+                'total_actividades' => RegistroActividadFisica::where('id_usuario', 1)
                     ->whereBetween('fecha_actividad', [$mes, $hoy])
                     ->count()
             ]

@@ -34,7 +34,7 @@ class RegistroConsumoController extends Controller
     public function show($id): JsonResponse
     {
         $registro = RegistroConsumo::with(['plato.lugar', 'plato.categoria'])
-            ->where('id_usuario', Auth::id())
+            ->where('id_usuario', 1)
             ->find($id);
 
         if (!$registro) {
@@ -99,7 +99,7 @@ class RegistroConsumoController extends Controller
      */
     public function update(Request $request, $id): JsonResponse
     {
-        $registro = RegistroConsumo::where('id_usuario', Auth::id())->find($id);
+        $registro = RegistroConsumo::where('id_usuario', 1)->find($id);
 
         if (!$registro) {
             return response()->json([
@@ -147,21 +147,38 @@ class RegistroConsumoController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $registro = RegistroConsumo::where('id_usuario', Auth::id())->find($id);
+        try {
+            \Log::info("Intentando eliminar registro de consumo con ID: $id");
+            
+            $registro = RegistroConsumo::where('id_usuario', 1)->find($id);
+            
+            \Log::info("Registro encontrado: " . ($registro ? 'Sí' : 'No'));
 
-        if (!$registro) {
+            if (!$registro) {
+                \Log::warning("Registro no encontrado con ID: $id");
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Registro no encontrado'
+                ], 404);
+            }
+
+            \Log::info("Eliminando registro con ID: " . $registro->id_consumo);
+            $registro->delete();
+            \Log::info("Registro eliminado exitosamente");
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Registro de consumo eliminado exitosamente'
+            ]);
+        } catch (\Exception $e) {
+            \Log::error("Error al eliminar registro de consumo: " . $e->getMessage());
+            \Log::error("Stack trace: " . $e->getTraceAsString());
+            
             return response()->json([
                 'success' => false,
-                'message' => 'Registro no encontrado'
-            ], 404);
+                'message' => 'Error interno del servidor: ' . $e->getMessage()
+            ], 500);
         }
-
-        $registro->delete();
-
-        return response()->json([
-            'success' => true,
-            'message' => 'Registro de consumo eliminado exitosamente'
-        ]);
     }
 
     /**
@@ -175,26 +192,26 @@ class RegistroConsumoController extends Controller
 
         $estadisticas = [
             'hoy' => [
-                'total_calorias' => RegistroConsumo::where('id_usuario', Auth::id())
+                'total_calorias' => RegistroConsumo::where('id_usuario', 1)
                     ->where('fecha_consumo', $hoy)
                     ->sum('calorias_totales'),
-                'total_registros' => RegistroConsumo::where('id_usuario', Auth::id())
+                'total_registros' => RegistroConsumo::where('id_usuario', 1)
                     ->where('fecha_consumo', $hoy)
                     ->count()
             ],
             'semana' => [
-                'total_calorias' => RegistroConsumo::where('id_usuario', Auth::id())
+                'total_calorias' => RegistroConsumo::where('id_usuario', 1)
                     ->whereBetween('fecha_consumo', [$semana, $hoy])
                     ->sum('calorias_totales'),
-                'total_registros' => RegistroConsumo::where('id_usuario', Auth::id())
+                'total_registros' => RegistroConsumo::where('id_usuario', 1)
                     ->whereBetween('fecha_consumo', [$semana, $hoy])
                     ->count()
             ],
             'mes' => [
-                'total_calorias' => RegistroConsumo::where('id_usuario', Auth::id())
+                'total_calorias' => RegistroConsumo::where('id_usuario', 1)
                     ->whereBetween('fecha_consumo', [$mes, $hoy])
                     ->sum('calorias_totales'),
-                'total_registros' => RegistroConsumo::where('id_usuario', Auth::id())
+                'total_registros' => RegistroConsumo::where('id_usuario', 1)
                     ->whereBetween('fecha_consumo', [$mes, $hoy])
                     ->count()
             ]

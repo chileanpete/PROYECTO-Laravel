@@ -6,10 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class RegistroActividadFisica extends Model
 {
+    protected $table = 'registro_actividad_fisica';
+    protected $primaryKey = 'id_actividad';
+    
     protected $fillable = [
         'id_usuario',
         'id_tipo_ejercicio',
         'id_rutina',
+        'id_rutina_ejercicio',
         'fecha_actividad',
         'hora_inicio',
         'hora_fin',
@@ -20,8 +24,6 @@ class RegistroActividadFisica extends Model
         'completada',
         'puntos_obtenidos'
     ];
-
-    protected $table = 'registro_actividad_fisica';
 
     public function getCompletadaAttribute($value)
     {
