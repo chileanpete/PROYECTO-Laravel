@@ -77,16 +77,23 @@ class RegistroConsumoController extends Controller
      */
     public function store(Request $request): JsonResponse
     {
+        // Obtener el usuario autenticado
+        $usuario = Auth::user();
+        if (!$usuario) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Usuario no autenticado'
+            ], 401);
+        }
+
         $validator = Validator::make($request->all(), [
-            'id_usuario' => 'required|exists:usuarios,id_usuario',
             'id_plato' => 'required|exists:platos,id_plato',
             'fecha_consumo' => 'required|date',
             'hora_consumo' => 'required|date_format:H:i',
-            'tipo_comida' => 'required|in:desayuno,almuerzo,cena,refrigerio',
-            'porcion_consumida' => 'required|numeric|min:0.1|max:10',
-            'calorias_consumidas' => 'required|integer|min:0',
+            'porciones' => 'required|numeric|min:0.1|max:10',
+            'calorias_totales' => 'required|integer|min:0',
             'comentario' => 'nullable|string',
-            'satisfaccion' => 'integer|min:1|max:5'
+            'valoracion' => 'integer|min:1|max:5'
         ]);
 
         if ($validator->fails()) {
@@ -98,15 +105,14 @@ class RegistroConsumoController extends Controller
         }
 
         $registro = RegistroConsumo::create([
-            'id_usuario' => $request->id_usuario,
+            'id_usuario' => $usuario->id_usuario,
             'id_plato' => $request->id_plato,
             'fecha_consumo' => $request->fecha_consumo,
             'hora_consumo' => $request->hora_consumo,
-            'tipo_comida' => $request->tipo_comida,
-            'porcion_consumida' => $request->porcion_consumida,
-            'calorias_consumidas' => $request->calorias_consumidas,
+            'porciones' => $request->porciones,
+            'calorias_totales' => $request->calorias_totales,
             'comentario' => $request->comentario,
-            'satisfaccion' => $request->satisfaccion ?? 3
+            'valoracion' => $request->valoracion ?? 3
         ]);
 
         return response()->json([

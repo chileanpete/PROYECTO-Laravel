@@ -61,6 +61,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // Actividad Física
     Route::prefix('actividad-fisica')->group(function () {
+        Route::get('/exportar-pdf', [RegistroActividadFisicaController::class, 'exportarPDF']);
         Route::get('/', [RegistroActividadFisicaController::class, 'index']);
         Route::get('/{id}', [RegistroActividadFisicaController::class, 'show']);
         Route::post('/', [RegistroActividadFisicaController::class, 'store']);
@@ -72,7 +73,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     // Registro de Consumo
-    Route::prefix('consumos')->group(function () {
+    Route::prefix('registro-consumo')->group(function () {
         Route::get('/', [RegistroConsumoController::class, 'index']);
         Route::get('/{id}', [RegistroConsumoController::class, 'show']);
         Route::post('/', [RegistroConsumoController::class, 'store']);
@@ -80,6 +81,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/{id}', [RegistroConsumoController::class, 'destroy']);
         Route::get('/estadisticas/{idUsuario}', [RegistroConsumoController::class, 'estadisticas']);
         Route::get('/por-fecha/{idUsuario}', [RegistroConsumoController::class, 'porFecha']);
+        Route::get('/exportar-pdf', [RegistroConsumoController::class, 'exportarPDF']);
     });
 
     // Favoritos
