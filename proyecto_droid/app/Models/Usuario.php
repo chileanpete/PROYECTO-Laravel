@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\ObjetivoAlimentacion;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Laravel\Sanctum\HasApiTokens;
 
 class Usuario extends Model
 {
+    use HasApiTokens;
+    
     protected $table = 'usuarios';
     protected $primaryKey = 'id_usuario';
 

@@ -17,6 +17,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -69,6 +72,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -176,7 +182,7 @@ endpoints:
         name: objetivo_principal
         description: ''
         required: true
-        example: ganar_peso
+        example: ganar_musculo
         type: string
         enumValues:
           - perder_peso
@@ -216,7 +222,7 @@ endpoints:
       altura_cm: 13
       peso_kg: 16
       nivel_actividad: ligero
-      objetivo_principal: ganar_peso
+      objetivo_principal: ganar_musculo
       preferencias_alimentarias: consequatur
       alergias: consequatur
     fileParameters: []
@@ -243,6 +249,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -282,6 +291,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -332,6 +344,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -425,7 +440,7 @@ endpoints:
         name: nivel_actividad
         description: ''
         required: false
-        example: activo
+        example: ligero
         type: string
         enumValues:
           - sedentario
@@ -440,7 +455,7 @@ endpoints:
         name: objetivo_principal
         description: ''
         required: false
-        example: perder_peso
+        example: mantener_peso
         type: string
         enumValues:
           - perder_peso
@@ -478,8 +493,8 @@ endpoints:
       genero: O
       altura_cm: 13
       peso_kg: 16
-      nivel_actividad: activo
-      objetivo_principal: perder_peso
+      nivel_actividad: ligero
+      objetivo_principal: mantener_peso
       preferencias_alimentarias: consequatur
       alergias: consequatur
     fileParameters: []
@@ -506,6 +521,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -547,6 +565,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -597,6 +618,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -660,6 +684,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -699,6 +726,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -749,6 +779,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -878,7 +911,7 @@ endpoints:
         name: es_vegetariano
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -898,7 +931,7 @@ endpoints:
         name: sin_gluten
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -927,9 +960,9 @@ endpoints:
       fibra_g: 19
       azucares_g: 70
       sodio_mg: 70
-      es_vegetariano: true
+      es_vegetariano: false
       es_vegano: false
-      sin_gluten: true
+      sin_gluten: false
       imagen_url: 'http://reynolds.com/'
     fileParameters: []
     responses: []
@@ -955,6 +988,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -1115,7 +1151,7 @@ endpoints:
         name: es_vegano
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -1125,7 +1161,7 @@ endpoints:
         name: sin_gluten
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -1154,8 +1190,8 @@ endpoints:
       sodio_mg: 70
       disponible: false
       es_vegetariano: false
-      es_vegano: false
-      sin_gluten: false
+      es_vegano: true
+      sin_gluten: true
       imagen_url: 'http://reynolds.com/'
     fileParameters: []
     responses: []
@@ -1181,6 +1217,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -1222,6 +1261,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -1272,6 +1314,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -1322,6 +1367,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idCategoria:
         name: idCategoria
@@ -1372,6 +1420,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idLugar:
         name: idLugar
@@ -1422,6 +1473,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -1461,6 +1515,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -1511,6 +1568,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -1560,7 +1620,7 @@ endpoints:
         name: fecha_actividad
         description: 'Must be a valid date.'
         required: true
-        example: '2025-07-08T02:48:05'
+        example: '2025-07-08T05:35:19'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1570,7 +1630,7 @@ endpoints:
         name: hora_inicio
         description: 'Must be a valid date in the format <code>H:i</code>.'
         required: true
-        example: '02:48'
+        example: '05:35'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1638,8 +1698,8 @@ endpoints:
         custom: []
     cleanBodyParameters:
       id_usuario: consequatur
-      fecha_actividad: '2025-07-08T02:48:05'
-      hora_inicio: '02:48'
+      fecha_actividad: '2025-07-08T05:35:19'
+      hora_inicio: '05:35'
       hora_fin: '2106-08-06'
       duracion_minutos: 45
       calorias_quemadas: 56
@@ -1670,6 +1730,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -1720,7 +1783,7 @@ endpoints:
         name: fecha_actividad
         description: 'Must be a valid date.'
         required: false
-        example: '2025-07-08T02:48:05'
+        example: '2025-07-08T05:35:19'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1730,7 +1793,7 @@ endpoints:
         name: hora_inicio
         description: 'Must be a valid date in the format <code>H:i</code>.'
         required: false
-        example: '02:48'
+        example: '05:35'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1797,8 +1860,8 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      fecha_actividad: '2025-07-08T02:48:05'
-      hora_inicio: '02:48'
+      fecha_actividad: '2025-07-08T05:35:19'
+      hora_inicio: '05:35'
       hora_fin: '2106-08-06'
       duracion_minutos: 45
       calorias_quemadas: 56
@@ -1829,6 +1892,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -1870,6 +1936,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -1920,6 +1989,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -1940,7 +2012,7 @@ endpoints:
         name: fecha_inicio
         description: 'Must be a valid date.'
         required: true
-        example: '2025-07-08T02:48:05'
+        example: '2025-07-08T05:35:19'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1957,7 +2029,7 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      fecha_inicio: '2025-07-08T02:48:05'
+      fecha_inicio: '2025-07-08T05:35:19'
       fecha_fin: '2106-08-06'
     fileParameters: []
     responses: []
@@ -1983,6 +2055,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -2024,6 +2099,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -2063,6 +2141,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -2113,6 +2194,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -2142,7 +2226,7 @@ endpoints:
         name: fecha_consumo
         description: 'Must be a valid date.'
         required: true
-        example: '2025-07-08T02:48:05'
+        example: '2025-07-08T05:35:19'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2152,7 +2236,7 @@ endpoints:
         name: hora_consumo
         description: 'Must be a valid date in the format <code>H:i</code>.'
         required: true
-        example: '02:48'
+        example: '05:35'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2162,7 +2246,7 @@ endpoints:
         name: tipo_comida
         description: ''
         required: true
-        example: cena
+        example: refrigerio
         type: string
         enumValues:
           - desayuno
@@ -2215,9 +2299,9 @@ endpoints:
     cleanBodyParameters:
       id_usuario: consequatur
       id_plato: consequatur
-      fecha_consumo: '2025-07-08T02:48:05'
-      hora_consumo: '02:48'
-      tipo_comida: cena
+      fecha_consumo: '2025-07-08T05:35:19'
+      hora_consumo: '05:35'
+      tipo_comida: refrigerio
       porcion_consumida: 5
       calorias_consumidas: 56
       comentario: consequatur
@@ -2246,6 +2330,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -2276,7 +2363,7 @@ endpoints:
         name: fecha_consumo
         description: 'Must be a valid date.'
         required: false
-        example: '2025-07-08T02:48:05'
+        example: '2025-07-08T05:35:19'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2286,7 +2373,7 @@ endpoints:
         name: hora_consumo
         description: 'Must be a valid date in the format <code>H:i</code>.'
         required: false
-        example: '02:48'
+        example: '05:35'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2296,7 +2383,7 @@ endpoints:
         name: tipo_comida
         description: ''
         required: false
-        example: desayuno
+        example: almuerzo
         type: string
         enumValues:
           - desayuno
@@ -2347,9 +2434,9 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      fecha_consumo: '2025-07-08T02:48:05'
-      hora_consumo: '02:48'
-      tipo_comida: desayuno
+      fecha_consumo: '2025-07-08T05:35:19'
+      hora_consumo: '05:35'
+      tipo_comida: almuerzo
       porcion_consumida: 9
       calorias_consumidas: 45
       comentario: consequatur
@@ -2378,6 +2465,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -2419,6 +2509,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -2469,6 +2562,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -2489,7 +2585,7 @@ endpoints:
         name: fecha_inicio
         description: 'Must be a valid date.'
         required: true
-        example: '2025-07-08T02:48:05'
+        example: '2025-07-08T05:35:19'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2506,7 +2602,7 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      fecha_inicio: '2025-07-08T02:48:05'
+      fecha_inicio: '2025-07-08T05:35:19'
       fecha_fin: '2106-08-06'
     fileParameters: []
     responses:
@@ -2541,6 +2637,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -2591,6 +2690,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -2643,6 +2745,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -2684,6 +2789,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -2745,6 +2853,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -2795,6 +2906,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -2845,6 +2959,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -2874,7 +2991,7 @@ endpoints:
         name: fecha_menu
         description: 'Must be a valid date.'
         required: true
-        example: '2025-07-08T02:48:05'
+        example: '2025-07-08T05:35:19'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2884,7 +3001,7 @@ endpoints:
         name: tipo_comida
         description: ''
         required: true
-        example: desayuno
+        example: refrigerio
         type: string
         enumValues:
           - desayuno
@@ -2937,8 +3054,8 @@ endpoints:
     cleanBodyParameters:
       id_usuario: consequatur
       id_plato: consequatur
-      fecha_menu: '2025-07-08T02:48:05'
-      tipo_comida: desayuno
+      fecha_menu: '2025-07-08T05:35:19'
+      tipo_comida: refrigerio
       porcion_planificada: 5
       calorias_planificadas: 56
       notas: consequatur
@@ -2967,6 +3084,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -2997,7 +3117,7 @@ endpoints:
         name: fecha_menu
         description: 'Must be a valid date.'
         required: false
-        example: '2025-07-08T02:48:05'
+        example: '2025-07-08T05:35:19'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -3007,7 +3127,7 @@ endpoints:
         name: tipo_comida
         description: ''
         required: false
-        example: desayuno
+        example: refrigerio
         type: string
         enumValues:
           - desayuno
@@ -3051,19 +3171,19 @@ endpoints:
         name: completado
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      fecha_menu: '2025-07-08T02:48:05'
-      tipo_comida: desayuno
+      fecha_menu: '2025-07-08T05:35:19'
+      tipo_comida: refrigerio
       porcion_planificada: 9
       calorias_planificadas: 45
       notas: consequatur
-      completado: false
+      completado: true
     fileParameters: []
     responses: []
     responseFields: []
@@ -3088,6 +3208,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -3129,6 +3252,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -3149,14 +3275,14 @@ endpoints:
         name: fecha
         description: 'Must be a valid date.'
         required: true
-        example: '2025-07-08T02:48:05'
+        example: '2025-07-08T05:35:19'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      fecha: '2025-07-08T02:48:05'
+      fecha: '2025-07-08T05:35:19'
     fileParameters: []
     responses: []
     responseFields: []
@@ -3181,6 +3307,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -3222,6 +3351,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -3242,7 +3374,7 @@ endpoints:
         name: fecha_inicio
         description: 'Must be a valid date.'
         required: true
-        example: '2025-07-08T02:48:05'
+        example: '2025-07-08T05:35:19'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -3259,7 +3391,7 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      fecha_inicio: '2025-07-08T02:48:05'
+      fecha_inicio: '2025-07-08T05:35:19'
       fecha_fin: '2106-08-06'
     fileParameters: []
     responses: []
@@ -3285,6 +3417,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -3335,6 +3470,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -3385,6 +3523,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -3404,7 +3545,7 @@ endpoints:
         name: tipo_objetivo
         description: ''
         required: true
-        example: mantener_peso
+        example: mejorar_salud
         type: string
         enumValues:
           - perder_peso
@@ -3429,7 +3570,7 @@ endpoints:
         name: fecha_inicio
         description: 'Must be a valid date.'
         required: true
-        example: '2025-07-08T02:48:05'
+        example: '2025-07-08T05:35:19'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -3497,9 +3638,9 @@ endpoints:
         custom: []
     cleanBodyParameters:
       id_usuario: consequatur
-      tipo_objetivo: mantener_peso
+      tipo_objetivo: mejorar_salud
       descripcion: mqeopfuudtdsufvyvddqa
-      fecha_inicio: '2025-07-08T02:48:05'
+      fecha_inicio: '2025-07-08T05:35:19'
       fecha_fin: '2106-08-06'
       meta_calorias_diarias: 13
       meta_proteinas_diarias: 56
@@ -3530,6 +3671,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -3550,7 +3694,7 @@ endpoints:
         name: tipo_objetivo
         description: ''
         required: false
-        example: ganar_musculo
+        example: mantener_peso
         type: string
         enumValues:
           - perder_peso
@@ -3575,7 +3719,7 @@ endpoints:
         name: fecha_inicio
         description: 'Must be a valid date.'
         required: false
-        example: '2025-07-08T02:48:05'
+        example: '2025-07-08T05:35:19'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -3652,9 +3796,9 @@ endpoints:
         nullable: true
         custom: []
     cleanBodyParameters:
-      tipo_objetivo: ganar_musculo
+      tipo_objetivo: mantener_peso
       descripcion: vmqeopfuudtdsufvyvddq
-      fecha_inicio: '2025-07-08T02:48:05'
+      fecha_inicio: '2025-07-08T05:35:19'
       fecha_fin: '2106-08-06'
       meta_calorias_diarias: 13
       meta_proteinas_diarias: 56
@@ -3686,6 +3830,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -3727,6 +3874,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -3768,6 +3918,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -3820,6 +3973,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -3870,6 +4026,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -3920,6 +4079,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -3959,6 +4121,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -4009,6 +4174,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -4038,7 +4206,7 @@ endpoints:
         name: tipo_desafio
         description: ''
         required: true
-        example: peso
+        example: consistencia
         type: string
         enumValues:
           - actividad_fisica
@@ -4121,7 +4289,7 @@ endpoints:
     cleanBodyParameters:
       titulo: vmqeopfuudtdsufvyvddq
       descripcion: amniihfqcoynlazghdtqt
-      tipo_desafio: peso
+      tipo_desafio: consistencia
       duracion_dias: 16
       meta_objetivo: 81
       puntos_recompensa: 7
@@ -4153,6 +4321,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -4193,7 +4364,7 @@ endpoints:
         name: tipo_desafio
         description: ''
         required: false
-        example: nutricion
+        example: actividad_fisica
         type: string
         enumValues:
           - actividad_fisica
@@ -4237,7 +4408,7 @@ endpoints:
         name: fecha_inicio
         description: 'Must be a valid date.'
         required: false
-        example: '2025-07-08T02:48:05'
+        example: '2025-07-08T05:35:19'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -4286,11 +4457,11 @@ endpoints:
     cleanBodyParameters:
       titulo: vmqeopfuudtdsufvyvddq
       descripcion: amniihfqcoynlazghdtqt
-      tipo_desafio: nutricion
+      tipo_desafio: actividad_fisica
       duracion_dias: 16
       meta_objetivo: 81
       puntos_recompensa: 7
-      fecha_inicio: '2025-07-08T02:48:05'
+      fecha_inicio: '2025-07-08T05:35:19'
       fecha_fin: '2106-08-06'
       dificultad: 3
       activo: true
@@ -4319,6 +4490,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -4360,6 +4534,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -4399,6 +4576,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -4449,6 +4629,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       tipo:
         name: tipo
@@ -4499,6 +4682,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       dificultad:
         name: dificultad
@@ -4549,6 +4735,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -4588,6 +4777,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -4627,6 +4819,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -4677,6 +4872,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -4726,7 +4924,7 @@ endpoints:
         name: hora_inicio
         description: 'Must be a valid date in the format <code>H:i</code>.'
         required: true
-        example: '02:48'
+        example: '05:35'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -4802,7 +5000,7 @@ endpoints:
       descripcion: amniihfqcoynlazghdtqt
       fecha_inicio: '2106-08-06'
       fecha_fin: '2106-08-06'
-      hora_inicio: '02:48'
+      hora_inicio: '05:35'
       hora_fin: '2106-08-06'
       lugar: mqeopfuudtdsufvyvddqa
       capacidad_maxima: 45
@@ -4833,6 +5031,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -4873,7 +5074,7 @@ endpoints:
         name: fecha_inicio
         description: 'Must be a valid date.'
         required: false
-        example: '2025-07-08T02:48:05'
+        example: '2025-07-08T05:35:19'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -4893,7 +5094,7 @@ endpoints:
         name: hora_inicio
         description: 'Must be a valid date in the format <code>H:i</code>.'
         required: false
-        example: '02:48'
+        example: '05:35'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -4933,7 +5134,7 @@ endpoints:
         name: tipo_evento
         description: ''
         required: false
-        example: seminario
+        example: taller
         type: string
         enumValues:
           - conferencia
@@ -4977,13 +5178,13 @@ endpoints:
     cleanBodyParameters:
       titulo: vmqeopfuudtdsufvyvddq
       descripcion: amniihfqcoynlazghdtqt
-      fecha_inicio: '2025-07-08T02:48:05'
+      fecha_inicio: '2025-07-08T05:35:19'
       fecha_fin: '2106-08-06'
-      hora_inicio: '02:48'
+      hora_inicio: '05:35'
       hora_fin: '2106-08-06'
       lugar: mqeopfuudtdsufvyvddqa
       capacidad_maxima: 45
-      tipo_evento: seminario
+      tipo_evento: taller
       ponente: niihfqcoynlazghdtqtqx
       activo: false
       imagen_url: 'http://www.adams.com/'
@@ -5011,6 +5212,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -5052,6 +5256,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -5091,6 +5298,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       tipo:
         name: tipo
@@ -5141,6 +5351,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       ponente:
         name: ponente
@@ -5191,6 +5404,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -5230,6 +5446,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -5280,6 +5499,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -5319,6 +5541,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -5358,6 +5583,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -5408,6 +5636,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -5457,7 +5688,7 @@ endpoints:
         name: hora_inicio
         description: 'Must be a valid date in the format <code>H:i</code>.'
         required: true
-        example: '02:48'
+        example: '05:35'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -5497,7 +5728,7 @@ endpoints:
         name: tipo_taller
         description: ''
         required: true
-        example: manualidades
+        example: arte
         type: string
         enumValues:
           - deportes
@@ -5544,11 +5775,11 @@ endpoints:
       descripcion: amniihfqcoynlazghdtqt
       fecha_inicio: '2106-08-06'
       fecha_fin: '2106-08-06'
-      hora_inicio: '02:48'
+      hora_inicio: '05:35'
       hora_fin: '2106-08-06'
       lugar: mqeopfuudtdsufvyvddqa
       capacidad_maxima: 45
-      tipo_taller: manualidades
+      tipo_taller: arte
       instructor: niihfqcoynlazghdtqtqx
       precio: 6
       imagen_url: 'http://www.hill.net/'
@@ -5576,6 +5807,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -5616,7 +5850,7 @@ endpoints:
         name: fecha_inicio
         description: 'Must be a valid date.'
         required: false
-        example: '2025-07-08T02:48:05'
+        example: '2025-07-08T05:35:20'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -5636,7 +5870,7 @@ endpoints:
         name: hora_inicio
         description: 'Must be a valid date in the format <code>H:i</code>.'
         required: false
-        example: '02:48'
+        example: '05:35'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -5676,7 +5910,7 @@ endpoints:
         name: tipo_taller
         description: ''
         required: false
-        example: musica
+        example: manualidades
         type: string
         enumValues:
           - deportes
@@ -5712,7 +5946,7 @@ endpoints:
         name: activo
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -5731,16 +5965,16 @@ endpoints:
     cleanBodyParameters:
       nombre: vmqeopfuudtdsufvyvddq
       descripcion: amniihfqcoynlazghdtqt
-      fecha_inicio: '2025-07-08T02:48:05'
+      fecha_inicio: '2025-07-08T05:35:20'
       fecha_fin: '2106-08-06'
-      hora_inicio: '02:48'
+      hora_inicio: '05:35'
       hora_fin: '2106-08-06'
       lugar: mqeopfuudtdsufvyvddqa
       capacidad_maxima: 45
-      tipo_taller: musica
+      tipo_taller: manualidades
       instructor: niihfqcoynlazghdtqtqx
       precio: 6
-      activo: true
+      activo: false
       imagen_url: 'http://www.hill.net/'
     fileParameters: []
     responses: []
@@ -5766,6 +6000,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -5807,6 +6044,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -5846,6 +6086,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       tipo:
         name: tipo
@@ -5896,6 +6139,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       instructor:
         name: instructor
@@ -5946,6 +6192,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -5985,6 +6234,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -6024,6 +6276,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -6074,6 +6329,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -6113,6 +6371,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -6163,6 +6424,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -6213,6 +6477,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -6232,7 +6499,7 @@ endpoints:
         name: tipo_recomendacion
         description: ''
         required: true
-        example: salud
+        example: actividad_fisica
         type: string
         enumValues:
           - nutricion
@@ -6295,7 +6562,7 @@ endpoints:
         custom: []
     cleanBodyParameters:
       id_usuario: consequatur
-      tipo_recomendacion: salud
+      tipo_recomendacion: actividad_fisica
       titulo: mqeopfuudtdsufvyvddqa
       descripcion: mniihfqcoynlazghdtqtq
       contenido: xbajwbpilpmufinllwloa
@@ -6325,6 +6592,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -6345,7 +6615,7 @@ endpoints:
         name: tipo_recomendacion
         description: ''
         required: false
-        example: nutricion
+        example: actividad_fisica
         type: string
         enumValues:
           - nutricion
@@ -6407,7 +6677,7 @@ endpoints:
         nullable: true
         custom: []
     cleanBodyParameters:
-      tipo_recomendacion: nutricion
+      tipo_recomendacion: actividad_fisica
       titulo: vmqeopfuudtdsufvyvddq
       descripcion: amniihfqcoynlazghdtqt
       contenido: qxbajwbpilpmufinllwlo
@@ -6437,6 +6707,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -6478,6 +6751,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -6519,6 +6795,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -6569,6 +6848,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -6630,6 +6912,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -6691,6 +6976,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -6741,6 +7029,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -6791,6 +7082,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -6841,6 +7135,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -6891,6 +7188,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -6910,7 +7210,7 @@ endpoints:
         name: fecha_registro
         description: 'Must be a valid date.'
         required: true
-        example: '2025-07-08T02:48:05'
+        example: '2025-07-08T05:35:20'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -6948,7 +7248,7 @@ endpoints:
         custom: []
     cleanBodyParameters:
       id_usuario: consequatur
-      fecha_registro: '2025-07-08T02:48:05'
+      fecha_registro: '2025-07-08T05:35:20'
       peso_kg: 13
       altura_cm: 16
       notas: eopfuudtdsufvyvddqamn
@@ -6976,6 +7276,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -6996,7 +7299,7 @@ endpoints:
         name: fecha_registro
         description: 'Must be a valid date.'
         required: false
-        example: '2025-07-08T02:48:05'
+        example: '2025-07-08T05:35:20'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -7033,7 +7336,7 @@ endpoints:
         nullable: true
         custom: []
     cleanBodyParameters:
-      fecha_registro: '2025-07-08T02:48:05'
+      fecha_registro: '2025-07-08T05:35:20'
       peso_kg: 21
       altura_cm: 13
       notas: qeopfuudtdsufvyvddqam
@@ -7061,6 +7364,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -7102,6 +7408,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -7152,6 +7461,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -7172,7 +7484,7 @@ endpoints:
         name: fecha_inicio
         description: 'Must be a valid date.'
         required: true
-        example: '2025-07-08T02:48:05'
+        example: '2025-07-08T05:35:20'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -7189,7 +7501,7 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      fecha_inicio: '2025-07-08T02:48:05'
+      fecha_inicio: '2025-07-08T05:35:20'
       fecha_fin: '2106-08-06'
     fileParameters: []
     responses: []
@@ -7215,6 +7527,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -7265,6 +7580,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -7315,6 +7633,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -7354,6 +7675,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -7404,6 +7728,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -7456,6 +7783,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -7518,6 +7848,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -7559,6 +7892,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -7598,6 +7934,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -7648,6 +7987,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -7687,7 +8029,7 @@ endpoints:
         name: horario_apertura
         description: 'Must be a valid date in the format <code>H:i</code>.'
         required: true
-        example: '02:48'
+        example: '05:35'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -7722,7 +8064,7 @@ endpoints:
       nombre: vmqeopfuudtdsufvyvddq
       direccion: amniihfqcoynlazghdtqt
       telefono: qxbajwbpilpmufinl
-      horario_apertura: '02:48'
+      horario_apertura: '05:35'
       horario_cierre: '2106-08-06'
       tipo_establecimiento: otro
     fileParameters: []
@@ -7749,6 +8091,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -7799,7 +8144,7 @@ endpoints:
         name: horario_apertura
         description: 'Must be a valid date in the format <code>H:i</code>.'
         required: false
-        example: '02:48'
+        example: '05:35'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -7819,7 +8164,7 @@ endpoints:
         name: tipo_establecimiento
         description: ''
         required: false
-        example: restaurante
+        example: cafeteria
         type: string
         enumValues:
           - restaurante
@@ -7834,9 +8179,9 @@ endpoints:
       nombre: vmqeopfuudtdsufvyvddq
       direccion: amniihfqcoynlazghdtqt
       telefono: qxbajwbpilpmufinl
-      horario_apertura: '02:48'
+      horario_apertura: '05:35'
       horario_cierre: '2106-08-06'
-      tipo_establecimiento: restaurante
+      tipo_establecimiento: cafeteria
     fileParameters: []
     responses: []
     responseFields: []
@@ -7861,6 +8206,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -7902,6 +8250,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -7941,6 +8292,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -7991,6 +8345,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -8020,7 +8377,7 @@ endpoints:
         name: categoria
         description: ''
         required: true
-        example: cardio
+        example: flexibilidad
         type: string
         enumValues:
           - cardio
@@ -8054,7 +8411,7 @@ endpoints:
     cleanBodyParameters:
       nombre: vmqeopfuudtdsufvyvddq
       descripcion: consequatur
-      categoria: cardio
+      categoria: flexibilidad
       intensidad_promedio: 3
       calorias_por_hora: 56
     fileParameters: []
@@ -8081,6 +8438,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -8121,7 +8481,7 @@ endpoints:
         name: categoria
         description: ''
         required: false
-        example: equilibrio
+        example: fuerza
         type: string
         enumValues:
           - cardio
@@ -8154,7 +8514,7 @@ endpoints:
         custom: []
     cleanBodyParameters:
       descripcion: consequatur
-      categoria: equilibrio
+      categoria: fuerza
       intensidad_promedio: 3
       calorias_por_hora: 56
     fileParameters: []
@@ -8181,6 +8541,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -8222,6 +8585,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -8261,6 +8627,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -8311,6 +8680,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -8434,6 +8806,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -8474,7 +8849,7 @@ endpoints:
         name: tipo_rutina
         description: ''
         required: false
-        example: cardio
+        example: fuerza
         type: string
         enumValues:
           - fuerza
@@ -8548,7 +8923,7 @@ endpoints:
     cleanBodyParameters:
       nombre: vmqeopfuudtdsufvyvddq
       descripcion: amniihfqcoynlazghdtqt
-      tipo_rutina: cardio
+      tipo_rutina: fuerza
       nivel_dificultad: 4
       duracion_estimada: 23
       calorias_estimadas: 2
@@ -8579,6 +8954,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -8620,6 +8998,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -8659,6 +9040,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       tipo:
         name: tipo
@@ -8709,6 +9093,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       nivel:
         name: nivel
@@ -8759,6 +9146,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -8811,6 +9201,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -8850,6 +9243,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -8889,6 +9285,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -8939,6 +9338,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -8989,6 +9391,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -9041,6 +9446,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -9071,7 +9479,7 @@ endpoints:
         name: estado
         description: ''
         required: false
-        example: pausado
+        example: en_progreso
         type: string
         enumValues:
           - en_progreso
@@ -9083,7 +9491,7 @@ endpoints:
         custom: []
     cleanBodyParameters:
       progreso_actual: 21
-      estado: pausado
+      estado: en_progreso
     fileParameters: []
     responses: []
     responseFields: []
@@ -9108,6 +9516,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -9149,6 +9560,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -9199,6 +9613,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -9249,6 +9666,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -9299,6 +9719,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -9340,6 +9763,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -9390,6 +9816,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -9440,6 +9869,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -9490,6 +9922,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -9542,6 +9977,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -9562,7 +10000,7 @@ endpoints:
         name: estado
         description: ''
         required: false
-        example: no_asistio
+        example: cancelado
         type: string
         enumValues:
           - inscrito
@@ -9576,7 +10014,7 @@ endpoints:
         name: asistio
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -9593,8 +10031,8 @@ endpoints:
         nullable: true
         custom: []
     cleanBodyParameters:
-      estado: no_asistio
-      asistio: true
+      estado: cancelado
+      asistio: false
       notas: vmqeopfuudtdsufvyvddq
     fileParameters: []
     responses: []
@@ -9620,6 +10058,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -9661,6 +10102,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -9702,6 +10146,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -9752,6 +10199,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -9802,6 +10252,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -9852,6 +10305,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -9902,6 +10358,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -9952,6 +10411,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -10002,6 +10464,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -10052,6 +10517,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -10104,6 +10572,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -10193,6 +10664,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -10234,6 +10708,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -10275,6 +10752,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       id:
         name: id
@@ -10338,6 +10818,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -10388,6 +10871,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -10438,6 +10924,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -10488,6 +10977,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -10538,6 +11030,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters:
       idUsuario:
         name: idUsuario
@@ -10588,6 +11083,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -10627,6 +11125,9 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
+      X-API-Version: v1
+      X-Requested-With: XMLHttpRequest
+      Cache-Control: no-cache
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -10637,7 +11138,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"message":"API funcionando correctamente","timestamp":"2025-07-08T02:48:05.718702Z"}'
+        content: '{"message":"API funcionando correctamente","timestamp":"2025-07-08T05:35:20.307370Z"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json

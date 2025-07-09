@@ -600,7 +600,9 @@
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).&lt;/aside&gt;</code></pre>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
-<p>This API is not authenticated.</p>
+<p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer your-token"</code></strong>.</p>
+<p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
+<p>10|HLJnefF28ohiw89XqJf5W9SoNzbgBoUj0eRt58Xtcb1844f3</p>
 
         <h1 id="endpoints">Endpoints</h1>
 
@@ -622,6 +624,9 @@ You can switch the language used with the tabs at the top right (or from the nav
     "http://localhost:8000/api/usuarios/login" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"email\": \"qkunze@example.com\",
     \"password\": \"consequatur\"
@@ -637,6 +642,9 @@ You can switch the language used with the tabs at the top right (or from the nav
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
@@ -723,6 +731,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-usuarios-login"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-usuarios-login"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-usuarios-login"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -764,6 +805,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/usuarios/registro" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"email\": \"qkunze@example.com\",
     \"password\": \"Z5ij-e\\/dl4m{o,\",
@@ -774,7 +818,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"altura_cm\": 13,
     \"peso_kg\": 16,
     \"nivel_actividad\": \"ligero\",
-    \"objetivo_principal\": \"ganar_peso\",
+    \"objetivo_principal\": \"ganar_musculo\",
     \"preferencias_alimentarias\": \"consequatur\",
     \"alergias\": \"consequatur\"
 }"
@@ -789,6 +833,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
@@ -801,7 +848,7 @@ let body = {
     "altura_cm": 13,
     "peso_kg": 16,
     "nivel_actividad": "ligero",
-    "objetivo_principal": "ganar_peso",
+    "objetivo_principal": "ganar_musculo",
     "preferencias_alimentarias": "consequatur",
     "alergias": "consequatur"
 };
@@ -884,6 +931,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="header">
     <br>
 <p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-usuarios-registro"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-usuarios-registro"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-usuarios-registro"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
             </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -995,10 +1075,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="objetivo_principal"                data-endpoint="POSTapi-usuarios-registro"
-               value="ganar_peso"
+               value="ganar_musculo"
                data-component="body">
     <br>
-<p>Example: <code>ganar_peso</code></p>
+<p>Example: <code>ganar_musculo</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>perder_peso</code></li> <li><code>ganar_peso</code></li> <li><code>mantener_peso</code></li> <li><code>ganar_musculo</code></li></ul>
         </div>
@@ -1041,7 +1121,10 @@ Must be one of:
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/usuarios" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -1052,6 +1135,9 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -1148,6 +1234,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-usuarios"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-usuarios"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-usuarios"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-usuarios--id-">Obtener un usuario específico</h2>
@@ -1165,7 +1284,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/usuarios/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -1176,6 +1298,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -1272,6 +1397,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-usuarios--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-usuarios--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-usuarios--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -1302,6 +1460,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/usuarios/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"email\": \"qkunze@example.com\",
     \"nombre\": \"opfuudtdsufvyvddqamni\",
@@ -1310,8 +1471,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"genero\": \"O\",
     \"altura_cm\": 13,
     \"peso_kg\": 16,
-    \"nivel_actividad\": \"activo\",
-    \"objetivo_principal\": \"perder_peso\",
+    \"nivel_actividad\": \"ligero\",
+    \"objetivo_principal\": \"mantener_peso\",
     \"preferencias_alimentarias\": \"consequatur\",
     \"alergias\": \"consequatur\"
 }"
@@ -1326,6 +1487,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
@@ -1336,8 +1500,8 @@ let body = {
     "genero": "O",
     "altura_cm": 13,
     "peso_kg": 16,
-    "nivel_actividad": "activo",
-    "objetivo_principal": "perder_peso",
+    "nivel_actividad": "ligero",
+    "objetivo_principal": "mantener_peso",
     "preferencias_alimentarias": "consequatur",
     "alergias": "consequatur"
 };
@@ -1420,6 +1584,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="header">
     <br>
 <p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PUTapi-usuarios--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PUTapi-usuarios--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PUTapi-usuarios--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
             </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
@@ -1519,10 +1716,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="nivel_actividad"                data-endpoint="PUTapi-usuarios--id-"
-               value="activo"
+               value="ligero"
                data-component="body">
     <br>
-<p>Example: <code>activo</code></p>
+<p>Example: <code>ligero</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>sedentario</code></li> <li><code>ligero</code></li> <li><code>moderado</code></li> <li><code>activo</code></li> <li><code>muy_activo</code></li></ul>
         </div>
@@ -1532,10 +1729,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="objetivo_principal"                data-endpoint="PUTapi-usuarios--id-"
-               value="perder_peso"
+               value="mantener_peso"
                data-component="body">
     <br>
-<p>Example: <code>perder_peso</code></p>
+<p>Example: <code>mantener_peso</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>perder_peso</code></li> <li><code>ganar_peso</code></li> <li><code>mantener_peso</code></li> <li><code>ganar_musculo</code></li></ul>
         </div>
@@ -1578,7 +1775,10 @@ Must be one of:
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost:8000/api/usuarios/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -1589,6 +1789,9 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -1669,6 +1872,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="DELETEapi-usuarios--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="DELETEapi-usuarios--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="DELETEapi-usuarios--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -1698,7 +1934,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/usuarios/consequatur/estadisticas" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -1709,6 +1948,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -1805,6 +2047,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-usuarios--id--estadisticas"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-usuarios--id--estadisticas"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-usuarios--id--estadisticas"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -1835,6 +2110,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/usuarios/consequatur/cambiar-password" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"password_actual\": \"consequatur\",
     \"password_nuevo\": \"mqeopfuudtdsufvyvddqamniihfqcoynlazghdtqtqxbajwbpilpmufinllwloauydlsmsjury\"
@@ -1850,6 +2128,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
@@ -1936,6 +2217,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-usuarios--id--cambiar-password"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-usuarios--id--cambiar-password"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-usuarios--id--cambiar-password"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -1988,7 +2302,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/platos" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -1999,6 +2316,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -2095,6 +2415,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-platos"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-platos"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-platos"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-platos--id-">Obtener un plato específico</h2>
@@ -2112,7 +2465,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/platos/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -2123,6 +2479,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -2219,6 +2578,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-platos--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-platos--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-platos--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -2249,6 +2641,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/platos" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"id_lugar\": \"consequatur\",
     \"id_categoria\": \"consequatur\",
@@ -2262,9 +2657,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"fibra_g\": 19,
     \"azucares_g\": 70,
     \"sodio_mg\": 70,
-    \"es_vegetariano\": true,
+    \"es_vegetariano\": false,
     \"es_vegano\": false,
-    \"sin_gluten\": true,
+    \"sin_gluten\": false,
     \"imagen_url\": \"http:\\/\\/reynolds.com\\/\"
 }"
 </code></pre></div>
@@ -2278,6 +2673,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
@@ -2293,9 +2691,9 @@ let body = {
     "fibra_g": 19,
     "azucares_g": 70,
     "sodio_mg": 70,
-    "es_vegetariano": true,
+    "es_vegetariano": false,
     "es_vegano": false,
-    "sin_gluten": true,
+    "sin_gluten": false,
     "imagen_url": "http:\/\/reynolds.com\/"
 };
 
@@ -2377,6 +2775,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="header">
     <br>
 <p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-platos"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-platos"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-platos"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
             </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -2530,7 +2961,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>es_vegano</code></b>&nbsp;&nbsp;
@@ -2572,7 +3003,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>imagen_url</code></b>&nbsp;&nbsp;
@@ -2603,6 +3034,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/platos/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"nombre\": \"vmqeopfuudtdsufvyvddq\",
     \"descripcion\": \"consequatur\",
@@ -2616,8 +3050,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"sodio_mg\": 70,
     \"disponible\": false,
     \"es_vegetariano\": false,
-    \"es_vegano\": false,
-    \"sin_gluten\": false,
+    \"es_vegano\": true,
+    \"sin_gluten\": true,
     \"imagen_url\": \"http:\\/\\/reynolds.com\\/\"
 }"
 </code></pre></div>
@@ -2631,6 +3065,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
@@ -2646,8 +3083,8 @@ let body = {
     "sodio_mg": 70,
     "disponible": false,
     "es_vegetariano": false,
-    "es_vegano": false,
-    "sin_gluten": false,
+    "es_vegano": true,
+    "sin_gluten": true,
     "imagen_url": "http:\/\/reynolds.com\/"
 };
 
@@ -2729,6 +3166,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="header">
     <br>
 <p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PUTapi-platos--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PUTapi-platos--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PUTapi-platos--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
             </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
@@ -2936,7 +3406,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>false</code></p>
+<p>Example: <code>true</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>sin_gluten</code></b>&nbsp;&nbsp;
@@ -2957,7 +3427,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>false</code></p>
+<p>Example: <code>true</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>imagen_url</code></b>&nbsp;&nbsp;
@@ -2987,7 +3457,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost:8000/api/platos/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -2998,6 +3471,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -3078,6 +3554,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="DELETEapi-platos--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="DELETEapi-platos--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="DELETEapi-platos--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -3107,7 +3616,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/platos/recomendados/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -3118,6 +3630,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -3214,6 +3729,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-platos-recomendados--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-platos-recomendados--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-platos-recomendados--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -3244,6 +3792,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --get "http://localhost:8000/api/platos/buscar" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"termino\": \"vmqeopfuudtdsufvyvddqamniihfqcoynlazghdtqtqxbajwbpilpmufinllwloauydlsmsjur\"
 }"
@@ -3258,6 +3809,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
@@ -3359,6 +3913,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-platos-buscar"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-platos-buscar"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-platos-buscar"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>termino</code></b>&nbsp;&nbsp;
@@ -3388,7 +3975,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/platos/categoria/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -3399,6 +3989,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -3495,6 +4088,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-platos-categoria--idCategoria-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-platos-categoria--idCategoria-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-platos-categoria--idCategoria-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idCategoria</code></b>&nbsp;&nbsp;
@@ -3524,7 +4150,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/platos/lugar/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -3535,6 +4164,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -3631,6 +4263,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-platos-lugar--idLugar-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-platos-lugar--idLugar-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-platos-lugar--idLugar-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idLugar</code></b>&nbsp;&nbsp;
@@ -3660,7 +4325,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/actividad-fisica" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -3671,6 +4339,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -3767,6 +4438,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-actividad-fisica"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-actividad-fisica"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-actividad-fisica"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-actividad-fisica--id-">Obtener un registro específico</h2>
@@ -3784,7 +4488,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/actividad-fisica/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -3795,6 +4502,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -3891,6 +4601,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-actividad-fisica--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-actividad-fisica--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-actividad-fisica--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -3921,10 +4664,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/actividad-fisica" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"id_usuario\": \"consequatur\",
-    \"fecha_actividad\": \"2025-07-08T02:48:05\",
-    \"hora_inicio\": \"02:48\",
+    \"fecha_actividad\": \"2025-07-08T05:35:19\",
+    \"hora_inicio\": \"05:35\",
     \"hora_fin\": \"2106-08-06\",
     \"duracion_minutos\": 45,
     \"calorias_quemadas\": 56,
@@ -3943,12 +4689,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
     "id_usuario": "consequatur",
-    "fecha_actividad": "2025-07-08T02:48:05",
-    "hora_inicio": "02:48",
+    "fecha_actividad": "2025-07-08T05:35:19",
+    "hora_inicio": "05:35",
     "hora_fin": "2106-08-06",
     "duracion_minutos": 45,
     "calorias_quemadas": 56,
@@ -4036,6 +4785,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-actividad-fisica"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-actividad-fisica"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-actividad-fisica"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>id_usuario</code></b>&nbsp;&nbsp;
@@ -4087,10 +4869,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="fecha_actividad"                data-endpoint="POSTapi-actividad-fisica"
-               value="2025-07-08T02:48:05"
+               value="2025-07-08T05:35:19"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-07-08T02:48:05</code></p>
+<p>Must be a valid date. Example: <code>2025-07-08T05:35:19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>hora_inicio</code></b>&nbsp;&nbsp;
@@ -4098,10 +4880,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="hora_inicio"                data-endpoint="POSTapi-actividad-fisica"
-               value="02:48"
+               value="05:35"
                data-component="body">
     <br>
-<p>Must be a valid date in the format <code>H:i</code>. Example: <code>02:48</code></p>
+<p>Must be a valid date in the format <code>H:i</code>. Example: <code>05:35</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>hora_fin</code></b>&nbsp;&nbsp;
@@ -4197,9 +4979,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/actividad-fisica/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
-    \"fecha_actividad\": \"2025-07-08T02:48:05\",
-    \"hora_inicio\": \"02:48\",
+    \"fecha_actividad\": \"2025-07-08T05:35:19\",
+    \"hora_inicio\": \"05:35\",
     \"hora_fin\": \"2106-08-06\",
     \"duracion_minutos\": 45,
     \"calorias_quemadas\": 56,
@@ -4218,11 +5003,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
-    "fecha_actividad": "2025-07-08T02:48:05",
-    "hora_inicio": "02:48",
+    "fecha_actividad": "2025-07-08T05:35:19",
+    "hora_inicio": "05:35",
     "hora_fin": "2106-08-06",
     "duracion_minutos": 45,
     "calorias_quemadas": 56,
@@ -4310,6 +5098,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PUTapi-actividad-fisica--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PUTapi-actividad-fisica--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PUTapi-actividad-fisica--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -4362,10 +5183,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="fecha_actividad"                data-endpoint="PUTapi-actividad-fisica--id-"
-               value="2025-07-08T02:48:05"
+               value="2025-07-08T05:35:19"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-07-08T02:48:05</code></p>
+<p>Must be a valid date. Example: <code>2025-07-08T05:35:19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>hora_inicio</code></b>&nbsp;&nbsp;
@@ -4373,10 +5194,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="hora_inicio"                data-endpoint="PUTapi-actividad-fisica--id-"
-               value="02:48"
+               value="05:35"
                data-component="body">
     <br>
-<p>Must be a valid date in the format <code>H:i</code>. Example: <code>02:48</code></p>
+<p>Must be a valid date in the format <code>H:i</code>. Example: <code>05:35</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>hora_fin</code></b>&nbsp;&nbsp;
@@ -4471,7 +5292,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost:8000/api/actividad-fisica/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -4482,6 +5306,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -4562,6 +5389,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="DELETEapi-actividad-fisica--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="DELETEapi-actividad-fisica--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="DELETEapi-actividad-fisica--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -4591,7 +5451,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/actividad-fisica/estadisticas/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -4602,6 +5465,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -4698,6 +5564,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-actividad-fisica-estadisticas--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-actividad-fisica-estadisticas--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-actividad-fisica-estadisticas--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -4728,8 +5627,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/actividad-fisica/por-fecha/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
-    \"fecha_inicio\": \"2025-07-08T02:48:05\",
+    \"fecha_inicio\": \"2025-07-08T05:35:19\",
     \"fecha_fin\": \"2106-08-06\"
 }"
 </code></pre></div>
@@ -4743,10 +5645,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
-    "fecha_inicio": "2025-07-08T02:48:05",
+    "fecha_inicio": "2025-07-08T05:35:19",
     "fecha_fin": "2106-08-06"
 };
 
@@ -4829,6 +5734,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-actividad-fisica-por-fecha--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-actividad-fisica-por-fecha--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-actividad-fisica-por-fecha--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -4848,10 +5786,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="fecha_inicio"                data-endpoint="POSTapi-actividad-fisica-por-fecha--idUsuario-"
-               value="2025-07-08T02:48:05"
+               value="2025-07-08T05:35:19"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-07-08T02:48:05</code></p>
+<p>Must be a valid date. Example: <code>2025-07-08T05:35:19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>fecha_fin</code></b>&nbsp;&nbsp;
@@ -4881,7 +5819,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request PATCH \
     "http://localhost:8000/api/actividad-fisica/consequatur/completar" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -4892,6 +5833,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -4972,6 +5916,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PATCHapi-actividad-fisica--id--completar"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PATCHapi-actividad-fisica--id--completar"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PATCHapi-actividad-fisica--id--completar"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -5001,7 +5978,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/consumos" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -5012,6 +5992,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -5108,6 +6091,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-consumos"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-consumos"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-consumos"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-consumos--id-">Obtener un registro específico</h2>
@@ -5125,7 +6141,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/consumos/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -5136,6 +6155,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -5232,6 +6254,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-consumos--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-consumos--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-consumos--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -5262,12 +6317,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/consumos" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"id_usuario\": \"consequatur\",
     \"id_plato\": \"consequatur\",
-    \"fecha_consumo\": \"2025-07-08T02:48:05\",
-    \"hora_consumo\": \"02:48\",
-    \"tipo_comida\": \"cena\",
+    \"fecha_consumo\": \"2025-07-08T05:35:19\",
+    \"hora_consumo\": \"05:35\",
+    \"tipo_comida\": \"refrigerio\",
     \"porcion_consumida\": 5,
     \"calorias_consumidas\": 56,
     \"comentario\": \"consequatur\",
@@ -5284,14 +6342,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
     "id_usuario": "consequatur",
     "id_plato": "consequatur",
-    "fecha_consumo": "2025-07-08T02:48:05",
-    "hora_consumo": "02:48",
-    "tipo_comida": "cena",
+    "fecha_consumo": "2025-07-08T05:35:19",
+    "hora_consumo": "05:35",
+    "tipo_comida": "refrigerio",
     "porcion_consumida": 5,
     "calorias_consumidas": 56,
     "comentario": "consequatur",
@@ -5377,6 +6438,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-consumos"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-consumos"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-consumos"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>id_usuario</code></b>&nbsp;&nbsp;
@@ -5406,10 +6500,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="fecha_consumo"                data-endpoint="POSTapi-consumos"
-               value="2025-07-08T02:48:05"
+               value="2025-07-08T05:35:19"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-07-08T02:48:05</code></p>
+<p>Must be a valid date. Example: <code>2025-07-08T05:35:19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>hora_consumo</code></b>&nbsp;&nbsp;
@@ -5417,10 +6511,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="hora_consumo"                data-endpoint="POSTapi-consumos"
-               value="02:48"
+               value="05:35"
                data-component="body">
     <br>
-<p>Must be a valid date in the format <code>H:i</code>. Example: <code>02:48</code></p>
+<p>Must be a valid date in the format <code>H:i</code>. Example: <code>05:35</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>tipo_comida</code></b>&nbsp;&nbsp;
@@ -5428,10 +6522,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="tipo_comida"                data-endpoint="POSTapi-consumos"
-               value="cena"
+               value="refrigerio"
                data-component="body">
     <br>
-<p>Example: <code>cena</code></p>
+<p>Example: <code>refrigerio</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>desayuno</code></li> <li><code>almuerzo</code></li> <li><code>cena</code></li> <li><code>refrigerio</code></li></ul>
         </div>
@@ -5497,10 +6591,13 @@ Must be one of:
     "http://localhost:8000/api/consumos/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
-    \"fecha_consumo\": \"2025-07-08T02:48:05\",
-    \"hora_consumo\": \"02:48\",
-    \"tipo_comida\": \"desayuno\",
+    \"fecha_consumo\": \"2025-07-08T05:35:19\",
+    \"hora_consumo\": \"05:35\",
+    \"tipo_comida\": \"almuerzo\",
     \"porcion_consumida\": 9,
     \"calorias_consumidas\": 45,
     \"comentario\": \"consequatur\",
@@ -5517,12 +6614,15 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
-    "fecha_consumo": "2025-07-08T02:48:05",
-    "hora_consumo": "02:48",
-    "tipo_comida": "desayuno",
+    "fecha_consumo": "2025-07-08T05:35:19",
+    "hora_consumo": "05:35",
+    "tipo_comida": "almuerzo",
     "porcion_consumida": 9,
     "calorias_consumidas": 45,
     "comentario": "consequatur",
@@ -5608,6 +6708,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PUTapi-consumos--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PUTapi-consumos--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PUTapi-consumos--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -5638,10 +6771,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="fecha_consumo"                data-endpoint="PUTapi-consumos--id-"
-               value="2025-07-08T02:48:05"
+               value="2025-07-08T05:35:19"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-07-08T02:48:05</code></p>
+<p>Must be a valid date. Example: <code>2025-07-08T05:35:19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>hora_consumo</code></b>&nbsp;&nbsp;
@@ -5649,10 +6782,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="hora_consumo"                data-endpoint="PUTapi-consumos--id-"
-               value="02:48"
+               value="05:35"
                data-component="body">
     <br>
-<p>Must be a valid date in the format <code>H:i</code>. Example: <code>02:48</code></p>
+<p>Must be a valid date in the format <code>H:i</code>. Example: <code>05:35</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>tipo_comida</code></b>&nbsp;&nbsp;
@@ -5660,10 +6793,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="tipo_comida"                data-endpoint="PUTapi-consumos--id-"
-               value="desayuno"
+               value="almuerzo"
                data-component="body">
     <br>
-<p>Example: <code>desayuno</code></p>
+<p>Example: <code>almuerzo</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>desayuno</code></li> <li><code>almuerzo</code></li> <li><code>cena</code></li> <li><code>refrigerio</code></li></ul>
         </div>
@@ -5728,7 +6861,10 @@ Must be one of:
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost:8000/api/consumos/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -5739,6 +6875,9 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -5819,6 +6958,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="DELETEapi-consumos--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="DELETEapi-consumos--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="DELETEapi-consumos--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -5848,7 +7020,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/consumos/estadisticas/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -5859,6 +7034,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -5955,6 +7133,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-consumos-estadisticas--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-consumos-estadisticas--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-consumos-estadisticas--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -5985,8 +7196,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --get "http://localhost:8000/api/consumos/por-fecha/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
-    \"fecha_inicio\": \"2025-07-08T02:48:05\",
+    \"fecha_inicio\": \"2025-07-08T05:35:19\",
     \"fecha_fin\": \"2106-08-06\"
 }"
 </code></pre></div>
@@ -6000,10 +7214,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
-    "fecha_inicio": "2025-07-08T02:48:05",
+    "fecha_inicio": "2025-07-08T05:35:19",
     "fecha_fin": "2106-08-06"
 };
 
@@ -6102,6 +7319,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-consumos-por-fecha--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-consumos-por-fecha--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-consumos-por-fecha--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -6121,10 +7371,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="fecha_inicio"                data-endpoint="GETapi-consumos-por-fecha--idUsuario-"
-               value="2025-07-08T02:48:05"
+               value="2025-07-08T05:35:19"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-07-08T02:48:05</code></p>
+<p>Must be a valid date. Example: <code>2025-07-08T05:35:19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>fecha_fin</code></b>&nbsp;&nbsp;
@@ -6154,7 +7404,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/favoritos/usuario/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -6165,6 +7418,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -6261,6 +7517,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-favoritos-usuario--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-favoritos-usuario--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-favoritos-usuario--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -6291,6 +7580,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/favoritos" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"id_usuario\": \"consequatur\",
     \"id_plato\": \"consequatur\"
@@ -6306,6 +7598,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
@@ -6392,6 +7687,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-favoritos"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-favoritos"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-favoritos"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>id_usuario</code></b>&nbsp;&nbsp;
@@ -6432,7 +7760,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost:8000/api/favoritos/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -6443,6 +7774,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -6523,6 +7857,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="DELETEapi-favoritos--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="DELETEapi-favoritos--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="DELETEapi-favoritos--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -6552,7 +7919,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/favoritos/verificar/consequatur/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -6563,6 +7933,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -6659,6 +8032,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-favoritos-verificar--idUsuario---idPlato-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-favoritos-verificar--idUsuario---idPlato-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-favoritos-verificar--idUsuario---idPlato-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -6699,7 +8105,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/menus-diarios/usuario/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -6710,6 +8119,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -6806,6 +8218,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-menus-diarios-usuario--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-menus-diarios-usuario--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-menus-diarios-usuario--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -6835,7 +8280,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/menus-diarios/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -6846,6 +8294,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -6942,6 +8393,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-menus-diarios--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-menus-diarios--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-menus-diarios--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -6972,11 +8456,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/menus-diarios" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"id_usuario\": \"consequatur\",
     \"id_plato\": \"consequatur\",
-    \"fecha_menu\": \"2025-07-08T02:48:05\",
-    \"tipo_comida\": \"desayuno\",
+    \"fecha_menu\": \"2025-07-08T05:35:19\",
+    \"tipo_comida\": \"refrigerio\",
     \"porcion_planificada\": 5,
     \"calorias_planificadas\": 56,
     \"notas\": \"consequatur\",
@@ -6993,13 +8480,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
     "id_usuario": "consequatur",
     "id_plato": "consequatur",
-    "fecha_menu": "2025-07-08T02:48:05",
-    "tipo_comida": "desayuno",
+    "fecha_menu": "2025-07-08T05:35:19",
+    "tipo_comida": "refrigerio",
     "porcion_planificada": 5,
     "calorias_planificadas": 56,
     "notas": "consequatur",
@@ -7085,6 +8575,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-menus-diarios"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-menus-diarios"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-menus-diarios"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>id_usuario</code></b>&nbsp;&nbsp;
@@ -7114,10 +8637,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="fecha_menu"                data-endpoint="POSTapi-menus-diarios"
-               value="2025-07-08T02:48:05"
+               value="2025-07-08T05:35:19"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-07-08T02:48:05</code></p>
+<p>Must be a valid date. Example: <code>2025-07-08T05:35:19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>tipo_comida</code></b>&nbsp;&nbsp;
@@ -7125,10 +8648,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="tipo_comida"                data-endpoint="POSTapi-menus-diarios"
-               value="desayuno"
+               value="refrigerio"
                data-component="body">
     <br>
-<p>Example: <code>desayuno</code></p>
+<p>Example: <code>refrigerio</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>desayuno</code></li> <li><code>almuerzo</code></li> <li><code>cena</code></li> <li><code>refrigerio</code></li></ul>
         </div>
@@ -7204,13 +8727,16 @@ Must be one of:
     "http://localhost:8000/api/menus-diarios/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
-    \"fecha_menu\": \"2025-07-08T02:48:05\",
-    \"tipo_comida\": \"desayuno\",
+    \"fecha_menu\": \"2025-07-08T05:35:19\",
+    \"tipo_comida\": \"refrigerio\",
     \"porcion_planificada\": 9,
     \"calorias_planificadas\": 45,
     \"notas\": \"consequatur\",
-    \"completado\": false
+    \"completado\": true
 }"
 </code></pre></div>
 
@@ -7223,15 +8749,18 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
-    "fecha_menu": "2025-07-08T02:48:05",
-    "tipo_comida": "desayuno",
+    "fecha_menu": "2025-07-08T05:35:19",
+    "tipo_comida": "refrigerio",
     "porcion_planificada": 9,
     "calorias_planificadas": 45,
     "notas": "consequatur",
-    "completado": false
+    "completado": true
 };
 
 fetch(url, {
@@ -7313,6 +8842,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PUTapi-menus-diarios--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PUTapi-menus-diarios--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PUTapi-menus-diarios--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -7343,10 +8905,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="fecha_menu"                data-endpoint="PUTapi-menus-diarios--id-"
-               value="2025-07-08T02:48:05"
+               value="2025-07-08T05:35:19"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-07-08T02:48:05</code></p>
+<p>Must be a valid date. Example: <code>2025-07-08T05:35:19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>tipo_comida</code></b>&nbsp;&nbsp;
@@ -7354,10 +8916,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="tipo_comida"                data-endpoint="PUTapi-menus-diarios--id-"
-               value="desayuno"
+               value="refrigerio"
                data-component="body">
     <br>
-<p>Example: <code>desayuno</code></p>
+<p>Example: <code>refrigerio</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>desayuno</code></li> <li><code>almuerzo</code></li> <li><code>cena</code></li> <li><code>refrigerio</code></li></ul>
         </div>
@@ -7413,7 +8975,7 @@ Must be one of:
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>false</code></p>
+<p>Example: <code>true</code></p>
         </div>
         </form>
 
@@ -7432,7 +8994,10 @@ Must be one of:
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost:8000/api/menus-diarios/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -7443,6 +9008,9 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -7523,6 +9091,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="DELETEapi-menus-diarios--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="DELETEapi-menus-diarios--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="DELETEapi-menus-diarios--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -7553,8 +9154,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/menus-diarios/por-fecha/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
-    \"fecha\": \"2025-07-08T02:48:05\"
+    \"fecha\": \"2025-07-08T05:35:19\"
 }"
 </code></pre></div>
 
@@ -7567,10 +9171,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
-    "fecha": "2025-07-08T02:48:05"
+    "fecha": "2025-07-08T05:35:19"
 };
 
 fetch(url, {
@@ -7652,6 +9259,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-menus-diarios-por-fecha--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-menus-diarios-por-fecha--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-menus-diarios-por-fecha--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -7671,10 +9311,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="fecha"                data-endpoint="POSTapi-menus-diarios-por-fecha--idUsuario-"
-               value="2025-07-08T02:48:05"
+               value="2025-07-08T05:35:19"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-07-08T02:48:05</code></p>
+<p>Must be a valid date. Example: <code>2025-07-08T05:35:19</code></p>
         </div>
         </form>
 
@@ -7693,7 +9333,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request PATCH \
     "http://localhost:8000/api/menus-diarios/consequatur/completar" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -7704,6 +9347,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -7784,6 +9430,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PATCHapi-menus-diarios--id--completar"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PATCHapi-menus-diarios--id--completar"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PATCHapi-menus-diarios--id--completar"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -7814,8 +9493,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/menus-diarios/resumen-semanal/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
-    \"fecha_inicio\": \"2025-07-08T02:48:05\",
+    \"fecha_inicio\": \"2025-07-08T05:35:19\",
     \"fecha_fin\": \"2106-08-06\"
 }"
 </code></pre></div>
@@ -7829,10 +9511,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
-    "fecha_inicio": "2025-07-08T02:48:05",
+    "fecha_inicio": "2025-07-08T05:35:19",
     "fecha_fin": "2106-08-06"
 };
 
@@ -7915,6 +9600,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-menus-diarios-resumen-semanal--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-menus-diarios-resumen-semanal--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-menus-diarios-resumen-semanal--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -7934,10 +9652,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="fecha_inicio"                data-endpoint="POSTapi-menus-diarios-resumen-semanal--idUsuario-"
-               value="2025-07-08T02:48:05"
+               value="2025-07-08T05:35:19"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-07-08T02:48:05</code></p>
+<p>Must be a valid date. Example: <code>2025-07-08T05:35:19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>fecha_fin</code></b>&nbsp;&nbsp;
@@ -7967,7 +9685,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/objetivos-alimentacion/usuario/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -7978,6 +9699,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -8074,6 +9798,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-objetivos-alimentacion-usuario--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-objetivos-alimentacion-usuario--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-objetivos-alimentacion-usuario--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -8103,7 +9860,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/objetivos-alimentacion/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -8114,6 +9874,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -8210,6 +9973,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-objetivos-alimentacion--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-objetivos-alimentacion--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-objetivos-alimentacion--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -8240,11 +10036,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/objetivos-alimentacion" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"id_usuario\": \"consequatur\",
-    \"tipo_objetivo\": \"mantener_peso\",
+    \"tipo_objetivo\": \"mejorar_salud\",
     \"descripcion\": \"mqeopfuudtdsufvyvddqa\",
-    \"fecha_inicio\": \"2025-07-08T02:48:05\",
+    \"fecha_inicio\": \"2025-07-08T05:35:19\",
     \"fecha_fin\": \"2106-08-06\",
     \"meta_calorias_diarias\": 13,
     \"meta_proteinas_diarias\": 56,
@@ -8263,13 +10062,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
     "id_usuario": "consequatur",
-    "tipo_objetivo": "mantener_peso",
+    "tipo_objetivo": "mejorar_salud",
     "descripcion": "mqeopfuudtdsufvyvddqa",
-    "fecha_inicio": "2025-07-08T02:48:05",
+    "fecha_inicio": "2025-07-08T05:35:19",
     "fecha_fin": "2106-08-06",
     "meta_calorias_diarias": 13,
     "meta_proteinas_diarias": 56,
@@ -8357,6 +10159,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-objetivos-alimentacion"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-objetivos-alimentacion"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-objetivos-alimentacion"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>id_usuario</code></b>&nbsp;&nbsp;
@@ -8375,10 +10210,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="tipo_objetivo"                data-endpoint="POSTapi-objetivos-alimentacion"
-               value="mantener_peso"
+               value="mejorar_salud"
                data-component="body">
     <br>
-<p>Example: <code>mantener_peso</code></p>
+<p>Example: <code>mejorar_salud</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>perder_peso</code></li> <li><code>ganar_peso</code></li> <li><code>mantener_peso</code></li> <li><code>ganar_musculo</code></li> <li><code>mejorar_salud</code></li></ul>
         </div>
@@ -8399,10 +10234,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="fecha_inicio"                data-endpoint="POSTapi-objetivos-alimentacion"
-               value="2025-07-08T02:48:05"
+               value="2025-07-08T05:35:19"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-07-08T02:48:05</code></p>
+<p>Must be a valid date. Example: <code>2025-07-08T05:35:19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>fecha_fin</code></b>&nbsp;&nbsp;
@@ -8488,10 +10323,13 @@ Must be one of:
     "http://localhost:8000/api/objetivos-alimentacion/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
-    \"tipo_objetivo\": \"ganar_musculo\",
+    \"tipo_objetivo\": \"mantener_peso\",
     \"descripcion\": \"vmqeopfuudtdsufvyvddq\",
-    \"fecha_inicio\": \"2025-07-08T02:48:05\",
+    \"fecha_inicio\": \"2025-07-08T05:35:19\",
     \"fecha_fin\": \"2106-08-06\",
     \"meta_calorias_diarias\": 13,
     \"meta_proteinas_diarias\": 56,
@@ -8511,12 +10349,15 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
-    "tipo_objetivo": "ganar_musculo",
+    "tipo_objetivo": "mantener_peso",
     "descripcion": "vmqeopfuudtdsufvyvddq",
-    "fecha_inicio": "2025-07-08T02:48:05",
+    "fecha_inicio": "2025-07-08T05:35:19",
     "fecha_fin": "2106-08-06",
     "meta_calorias_diarias": 13,
     "meta_proteinas_diarias": 56,
@@ -8605,6 +10446,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PUTapi-objetivos-alimentacion--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PUTapi-objetivos-alimentacion--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PUTapi-objetivos-alimentacion--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -8624,10 +10498,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="tipo_objetivo"                data-endpoint="PUTapi-objetivos-alimentacion--id-"
-               value="ganar_musculo"
+               value="mantener_peso"
                data-component="body">
     <br>
-<p>Example: <code>ganar_musculo</code></p>
+<p>Example: <code>mantener_peso</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>perder_peso</code></li> <li><code>ganar_peso</code></li> <li><code>mantener_peso</code></li> <li><code>ganar_musculo</code></li> <li><code>mejorar_salud</code></li></ul>
         </div>
@@ -8648,10 +10522,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="fecha_inicio"                data-endpoint="PUTapi-objetivos-alimentacion--id-"
-               value="2025-07-08T02:48:05"
+               value="2025-07-08T05:35:19"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-07-08T02:48:05</code></p>
+<p>Must be a valid date. Example: <code>2025-07-08T05:35:19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>fecha_fin</code></b>&nbsp;&nbsp;
@@ -8747,7 +10621,10 @@ Must be one of:
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost:8000/api/objetivos-alimentacion/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -8758,6 +10635,9 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -8838,6 +10718,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="DELETEapi-objetivos-alimentacion--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="DELETEapi-objetivos-alimentacion--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="DELETEapi-objetivos-alimentacion--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -8867,7 +10780,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request PATCH \
     "http://localhost:8000/api/objetivos-alimentacion/consequatur/completar" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -8878,6 +10794,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -8958,6 +10877,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PATCHapi-objetivos-alimentacion--id--completar"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PATCHapi-objetivos-alimentacion--id--completar"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PATCHapi-objetivos-alimentacion--id--completar"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -8988,6 +10940,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/objetivos-alimentacion/consequatur/progreso" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"progreso_actual\": 21
 }"
@@ -9002,6 +10957,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
@@ -9087,6 +11045,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PATCHapi-objetivos-alimentacion--id--progreso"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PATCHapi-objetivos-alimentacion--id--progreso"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PATCHapi-objetivos-alimentacion--id--progreso"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -9128,7 +11119,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/objetivos-alimentacion/activos/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -9139,6 +11133,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -9235,6 +11232,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-objetivos-alimentacion-activos--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-objetivos-alimentacion-activos--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-objetivos-alimentacion-activos--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -9264,7 +11294,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/objetivos-alimentacion/estadisticas/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -9275,6 +11308,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -9371,6 +11407,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-objetivos-alimentacion-estadisticas--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-objetivos-alimentacion-estadisticas--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-objetivos-alimentacion-estadisticas--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -9400,7 +11469,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/desafios" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -9411,6 +11483,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -9507,6 +11582,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-desafios"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-desafios"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-desafios"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-desafios--id-">Obtener un desafío específico</h2>
@@ -9524,7 +11632,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/desafios/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -9535,6 +11646,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -9631,6 +11745,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-desafios--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-desafios--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-desafios--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -9661,10 +11808,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/desafios" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"titulo\": \"vmqeopfuudtdsufvyvddq\",
     \"descripcion\": \"amniihfqcoynlazghdtqt\",
-    \"tipo_desafio\": \"peso\",
+    \"tipo_desafio\": \"consistencia\",
     \"duracion_dias\": 16,
     \"meta_objetivo\": 81,
     \"puntos_recompensa\": 7,
@@ -9684,12 +11834,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
     "titulo": "vmqeopfuudtdsufvyvddq",
     "descripcion": "amniihfqcoynlazghdtqt",
-    "tipo_desafio": "peso",
+    "tipo_desafio": "consistencia",
     "duracion_dias": 16,
     "meta_objetivo": 81,
     "puntos_recompensa": 7,
@@ -9778,6 +11931,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-desafios"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-desafios"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-desafios"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>titulo</code></b>&nbsp;&nbsp;
@@ -9807,10 +11993,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="tipo_desafio"                data-endpoint="POSTapi-desafios"
-               value="peso"
+               value="consistencia"
                data-component="body">
     <br>
-<p>Example: <code>peso</code></p>
+<p>Example: <code>consistencia</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>actividad_fisica</code></li> <li><code>nutricion</code></li> <li><code>peso</code></li> <li><code>consistencia</code></li></ul>
         </div>
@@ -9909,14 +12095,17 @@ Must be one of:
     "http://localhost:8000/api/desafios/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"titulo\": \"vmqeopfuudtdsufvyvddq\",
     \"descripcion\": \"amniihfqcoynlazghdtqt\",
-    \"tipo_desafio\": \"nutricion\",
+    \"tipo_desafio\": \"actividad_fisica\",
     \"duracion_dias\": 16,
     \"meta_objetivo\": 81,
     \"puntos_recompensa\": 7,
-    \"fecha_inicio\": \"2025-07-08T02:48:05\",
+    \"fecha_inicio\": \"2025-07-08T05:35:19\",
     \"fecha_fin\": \"2106-08-06\",
     \"dificultad\": 3,
     \"activo\": true,
@@ -9933,16 +12122,19 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
     "titulo": "vmqeopfuudtdsufvyvddq",
     "descripcion": "amniihfqcoynlazghdtqt",
-    "tipo_desafio": "nutricion",
+    "tipo_desafio": "actividad_fisica",
     "duracion_dias": 16,
     "meta_objetivo": 81,
     "puntos_recompensa": 7,
-    "fecha_inicio": "2025-07-08T02:48:05",
+    "fecha_inicio": "2025-07-08T05:35:19",
     "fecha_fin": "2106-08-06",
     "dificultad": 3,
     "activo": true,
@@ -10028,6 +12220,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PUTapi-desafios--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PUTapi-desafios--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PUTapi-desafios--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -10069,10 +12294,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="tipo_desafio"                data-endpoint="PUTapi-desafios--id-"
-               value="nutricion"
+               value="actividad_fisica"
                data-component="body">
     <br>
-<p>Example: <code>nutricion</code></p>
+<p>Example: <code>actividad_fisica</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>actividad_fisica</code></li> <li><code>nutricion</code></li> <li><code>peso</code></li> <li><code>consistencia</code></li></ul>
         </div>
@@ -10115,10 +12340,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="fecha_inicio"                data-endpoint="PUTapi-desafios--id-"
-               value="2025-07-08T02:48:05"
+               value="2025-07-08T05:35:19"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-07-08T02:48:05</code></p>
+<p>Must be a valid date. Example: <code>2025-07-08T05:35:19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>fecha_fin</code></b>&nbsp;&nbsp;
@@ -10191,7 +12416,10 @@ Must be one of:
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost:8000/api/desafios/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -10202,6 +12430,9 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -10282,6 +12513,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="DELETEapi-desafios--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="DELETEapi-desafios--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="DELETEapi-desafios--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -10311,7 +12575,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/desafios/activos" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -10322,6 +12589,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -10418,6 +12688,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-desafios-activos"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-desafios-activos"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-desafios-activos"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-desafios-usuario--idUsuario-">Obtener desafíos de un usuario</h2>
@@ -10435,7 +12738,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/desafios/usuario/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -10446,6 +12752,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -10542,6 +12851,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-desafios-usuario--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-desafios-usuario--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-desafios-usuario--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -10571,7 +12913,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/desafios/tipo/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -10582,6 +12927,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -10678,6 +13026,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-desafios-tipo--tipo-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-desafios-tipo--tipo-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-desafios-tipo--tipo-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>tipo</code></b>&nbsp;&nbsp;
@@ -10707,7 +13088,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/desafios/dificultad/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -10718,6 +13102,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -10814,6 +13201,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-desafios-dificultad--dificultad-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-desafios-dificultad--dificultad-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-desafios-dificultad--dificultad-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>dificultad</code></b>&nbsp;&nbsp;
@@ -10843,7 +13263,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/desafios/estadisticas" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -10854,6 +13277,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -10950,6 +13376,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-desafios-estadisticas"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-desafios-estadisticas"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-desafios-estadisticas"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-eventos-academicos">Obtener todos los eventos</h2>
@@ -10967,7 +13426,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/eventos-academicos" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -10978,6 +13440,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -11074,6 +13539,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-eventos-academicos"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-eventos-academicos"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-eventos-academicos"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-eventos-academicos--id-">Obtener un evento específico</h2>
@@ -11091,7 +13589,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/eventos-academicos/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -11102,6 +13603,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -11198,6 +13702,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-eventos-academicos--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-eventos-academicos--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-eventos-academicos--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -11228,12 +13765,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/eventos-academicos" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"titulo\": \"vmqeopfuudtdsufvyvddq\",
     \"descripcion\": \"amniihfqcoynlazghdtqt\",
     \"fecha_inicio\": \"2106-08-06\",
     \"fecha_fin\": \"2106-08-06\",
-    \"hora_inicio\": \"02:48\",
+    \"hora_inicio\": \"05:35\",
     \"hora_fin\": \"2106-08-06\",
     \"lugar\": \"mqeopfuudtdsufvyvddqa\",
     \"capacidad_maxima\": 45,
@@ -11252,6 +13792,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
@@ -11259,7 +13802,7 @@ let body = {
     "descripcion": "amniihfqcoynlazghdtqt",
     "fecha_inicio": "2106-08-06",
     "fecha_fin": "2106-08-06",
-    "hora_inicio": "02:48",
+    "hora_inicio": "05:35",
     "hora_fin": "2106-08-06",
     "lugar": "mqeopfuudtdsufvyvddqa",
     "capacidad_maxima": 45,
@@ -11347,6 +13890,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-eventos-academicos"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-eventos-academicos"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-eventos-academicos"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>titulo</code></b>&nbsp;&nbsp;
@@ -11398,10 +13974,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="hora_inicio"                data-endpoint="POSTapi-eventos-academicos"
-               value="02:48"
+               value="05:35"
                data-component="body">
     <br>
-<p>Must be a valid date in the format <code>H:i</code>. Example: <code>02:48</code></p>
+<p>Must be a valid date in the format <code>H:i</code>. Example: <code>05:35</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>hora_fin</code></b>&nbsp;&nbsp;
@@ -11489,16 +14065,19 @@ Must be one of:
     "http://localhost:8000/api/eventos-academicos/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"titulo\": \"vmqeopfuudtdsufvyvddq\",
     \"descripcion\": \"amniihfqcoynlazghdtqt\",
-    \"fecha_inicio\": \"2025-07-08T02:48:05\",
+    \"fecha_inicio\": \"2025-07-08T05:35:19\",
     \"fecha_fin\": \"2106-08-06\",
-    \"hora_inicio\": \"02:48\",
+    \"hora_inicio\": \"05:35\",
     \"hora_fin\": \"2106-08-06\",
     \"lugar\": \"mqeopfuudtdsufvyvddqa\",
     \"capacidad_maxima\": 45,
-    \"tipo_evento\": \"seminario\",
+    \"tipo_evento\": \"taller\",
     \"ponente\": \"niihfqcoynlazghdtqtqx\",
     \"activo\": false,
     \"imagen_url\": \"http:\\/\\/www.adams.com\\/\"
@@ -11514,18 +14093,21 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
     "titulo": "vmqeopfuudtdsufvyvddq",
     "descripcion": "amniihfqcoynlazghdtqt",
-    "fecha_inicio": "2025-07-08T02:48:05",
+    "fecha_inicio": "2025-07-08T05:35:19",
     "fecha_fin": "2106-08-06",
-    "hora_inicio": "02:48",
+    "hora_inicio": "05:35",
     "hora_fin": "2106-08-06",
     "lugar": "mqeopfuudtdsufvyvddqa",
     "capacidad_maxima": 45,
-    "tipo_evento": "seminario",
+    "tipo_evento": "taller",
     "ponente": "niihfqcoynlazghdtqtqx",
     "activo": false,
     "imagen_url": "http:\/\/www.adams.com\/"
@@ -11610,6 +14192,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PUTapi-eventos-academicos--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PUTapi-eventos-academicos--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PUTapi-eventos-academicos--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -11651,10 +14266,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="fecha_inicio"                data-endpoint="PUTapi-eventos-academicos--id-"
-               value="2025-07-08T02:48:05"
+               value="2025-07-08T05:35:19"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-07-08T02:48:05</code></p>
+<p>Must be a valid date. Example: <code>2025-07-08T05:35:19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>fecha_fin</code></b>&nbsp;&nbsp;
@@ -11673,10 +14288,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="hora_inicio"                data-endpoint="PUTapi-eventos-academicos--id-"
-               value="02:48"
+               value="05:35"
                data-component="body">
     <br>
-<p>Must be a valid date in the format <code>H:i</code>. Example: <code>02:48</code></p>
+<p>Must be a valid date in the format <code>H:i</code>. Example: <code>05:35</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>hora_fin</code></b>&nbsp;&nbsp;
@@ -11717,10 +14332,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="tipo_evento"                data-endpoint="PUTapi-eventos-academicos--id-"
-               value="seminario"
+               value="taller"
                data-component="body">
     <br>
-<p>Example: <code>seminario</code></p>
+<p>Example: <code>taller</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>conferencia</code></li> <li><code>taller</code></li> <li><code>seminario</code></li> <li><code>charla</code></li> <li><code>workshop</code></li></ul>
         </div>
@@ -11784,7 +14399,10 @@ Must be one of:
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost:8000/api/eventos-academicos/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -11795,6 +14413,9 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -11875,6 +14496,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="DELETEapi-eventos-academicos--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="DELETEapi-eventos-academicos--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="DELETEapi-eventos-academicos--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -11904,7 +14558,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/eventos-academicos/activos" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -11915,6 +14572,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -12011,6 +14671,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-eventos-academicos-activos"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-eventos-academicos-activos"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-eventos-academicos-activos"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-eventos-academicos-tipo--tipo-">Obtener eventos por tipo</h2>
@@ -12028,7 +14721,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/eventos-academicos/tipo/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -12039,6 +14735,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -12135,6 +14834,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-eventos-academicos-tipo--tipo-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-eventos-academicos-tipo--tipo-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-eventos-academicos-tipo--tipo-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>tipo</code></b>&nbsp;&nbsp;
@@ -12164,7 +14896,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/eventos-academicos/ponente/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -12175,6 +14910,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -12271,6 +15009,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-eventos-academicos-ponente--ponente-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-eventos-academicos-ponente--ponente-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-eventos-academicos-ponente--ponente-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>ponente</code></b>&nbsp;&nbsp;
@@ -12300,7 +15071,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/eventos-academicos/con-cupos" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -12311,6 +15085,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -12407,6 +15184,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-eventos-academicos-con-cupos"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-eventos-academicos-con-cupos"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-eventos-academicos-con-cupos"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-eventos-academicos-usuario--idUsuario-">Obtener eventos de un usuario</h2>
@@ -12424,7 +15234,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/eventos-academicos/usuario/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -12435,6 +15248,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -12531,6 +15347,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-eventos-academicos-usuario--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-eventos-academicos-usuario--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-eventos-academicos-usuario--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -12560,7 +15409,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/eventos-academicos/estadisticas" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -12571,6 +15423,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -12667,6 +15522,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-eventos-academicos-estadisticas"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-eventos-academicos-estadisticas"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-eventos-academicos-estadisticas"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-talleres">Obtener todos los talleres</h2>
@@ -12684,7 +15572,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/talleres" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -12695,6 +15586,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -12791,6 +15685,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-talleres"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-talleres"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-talleres"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-talleres--id-">Obtener un taller específico</h2>
@@ -12808,7 +15735,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/talleres/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -12819,6 +15749,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -12915,6 +15848,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-talleres--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-talleres--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-talleres--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -12945,16 +15911,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/talleres" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"nombre\": \"vmqeopfuudtdsufvyvddq\",
     \"descripcion\": \"amniihfqcoynlazghdtqt\",
     \"fecha_inicio\": \"2106-08-06\",
     \"fecha_fin\": \"2106-08-06\",
-    \"hora_inicio\": \"02:48\",
+    \"hora_inicio\": \"05:35\",
     \"hora_fin\": \"2106-08-06\",
     \"lugar\": \"mqeopfuudtdsufvyvddqa\",
     \"capacidad_maxima\": 45,
-    \"tipo_taller\": \"manualidades\",
+    \"tipo_taller\": \"arte\",
     \"instructor\": \"niihfqcoynlazghdtqtqx\",
     \"precio\": 6,
     \"imagen_url\": \"http:\\/\\/www.hill.net\\/\"
@@ -12970,6 +15939,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
@@ -12977,11 +15949,11 @@ let body = {
     "descripcion": "amniihfqcoynlazghdtqt",
     "fecha_inicio": "2106-08-06",
     "fecha_fin": "2106-08-06",
-    "hora_inicio": "02:48",
+    "hora_inicio": "05:35",
     "hora_fin": "2106-08-06",
     "lugar": "mqeopfuudtdsufvyvddqa",
     "capacidad_maxima": 45,
-    "tipo_taller": "manualidades",
+    "tipo_taller": "arte",
     "instructor": "niihfqcoynlazghdtqtqx",
     "precio": 6,
     "imagen_url": "http:\/\/www.hill.net\/"
@@ -13066,6 +16038,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-talleres"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-talleres"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-talleres"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>nombre</code></b>&nbsp;&nbsp;
@@ -13117,10 +16122,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="hora_inicio"                data-endpoint="POSTapi-talleres"
-               value="02:48"
+               value="05:35"
                data-component="body">
     <br>
-<p>Must be a valid date in the format <code>H:i</code>. Example: <code>02:48</code></p>
+<p>Must be a valid date in the format <code>H:i</code>. Example: <code>05:35</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>hora_fin</code></b>&nbsp;&nbsp;
@@ -13161,10 +16166,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="tipo_taller"                data-endpoint="POSTapi-talleres"
-               value="manualidades"
+               value="arte"
                data-component="body">
     <br>
-<p>Example: <code>manualidades</code></p>
+<p>Example: <code>arte</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>deportes</code></li> <li><code>arte</code></li> <li><code>musica</code></li> <li><code>cocina</code></li> <li><code>manualidades</code></li> <li><code>tecnologia</code></li></ul>
         </div>
@@ -13219,19 +16224,22 @@ Must be one of:
     "http://localhost:8000/api/talleres/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"nombre\": \"vmqeopfuudtdsufvyvddq\",
     \"descripcion\": \"amniihfqcoynlazghdtqt\",
-    \"fecha_inicio\": \"2025-07-08T02:48:05\",
+    \"fecha_inicio\": \"2025-07-08T05:35:20\",
     \"fecha_fin\": \"2106-08-06\",
-    \"hora_inicio\": \"02:48\",
+    \"hora_inicio\": \"05:35\",
     \"hora_fin\": \"2106-08-06\",
     \"lugar\": \"mqeopfuudtdsufvyvddqa\",
     \"capacidad_maxima\": 45,
-    \"tipo_taller\": \"musica\",
+    \"tipo_taller\": \"manualidades\",
     \"instructor\": \"niihfqcoynlazghdtqtqx\",
     \"precio\": 6,
-    \"activo\": true,
+    \"activo\": false,
     \"imagen_url\": \"http:\\/\\/www.hill.net\\/\"
 }"
 </code></pre></div>
@@ -13245,21 +16253,24 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
     "nombre": "vmqeopfuudtdsufvyvddq",
     "descripcion": "amniihfqcoynlazghdtqt",
-    "fecha_inicio": "2025-07-08T02:48:05",
+    "fecha_inicio": "2025-07-08T05:35:20",
     "fecha_fin": "2106-08-06",
-    "hora_inicio": "02:48",
+    "hora_inicio": "05:35",
     "hora_fin": "2106-08-06",
     "lugar": "mqeopfuudtdsufvyvddqa",
     "capacidad_maxima": 45,
-    "tipo_taller": "musica",
+    "tipo_taller": "manualidades",
     "instructor": "niihfqcoynlazghdtqtqx",
     "precio": 6,
-    "activo": true,
+    "activo": false,
     "imagen_url": "http:\/\/www.hill.net\/"
 };
 
@@ -13342,6 +16353,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PUTapi-talleres--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PUTapi-talleres--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PUTapi-talleres--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -13383,10 +16427,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="fecha_inicio"                data-endpoint="PUTapi-talleres--id-"
-               value="2025-07-08T02:48:05"
+               value="2025-07-08T05:35:20"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-07-08T02:48:05</code></p>
+<p>Must be a valid date. Example: <code>2025-07-08T05:35:20</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>fecha_fin</code></b>&nbsp;&nbsp;
@@ -13405,10 +16449,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="hora_inicio"                data-endpoint="PUTapi-talleres--id-"
-               value="02:48"
+               value="05:35"
                data-component="body">
     <br>
-<p>Must be a valid date in the format <code>H:i</code>. Example: <code>02:48</code></p>
+<p>Must be a valid date in the format <code>H:i</code>. Example: <code>05:35</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>hora_fin</code></b>&nbsp;&nbsp;
@@ -13449,10 +16493,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="tipo_taller"                data-endpoint="PUTapi-talleres--id-"
-               value="musica"
+               value="manualidades"
                data-component="body">
     <br>
-<p>Example: <code>musica</code></p>
+<p>Example: <code>manualidades</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>deportes</code></li> <li><code>arte</code></li> <li><code>musica</code></li> <li><code>cocina</code></li> <li><code>manualidades</code></li> <li><code>tecnologia</code></li></ul>
         </div>
@@ -13497,7 +16541,7 @@ Must be one of:
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>imagen_url</code></b>&nbsp;&nbsp;
@@ -13527,7 +16571,10 @@ Must be one of:
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost:8000/api/talleres/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -13538,6 +16585,9 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -13618,6 +16668,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="DELETEapi-talleres--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="DELETEapi-talleres--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="DELETEapi-talleres--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -13647,7 +16730,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/talleres/activos" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -13658,6 +16744,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -13754,6 +16843,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-talleres-activos"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-talleres-activos"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-talleres-activos"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-talleres-tipo--tipo-">Obtener talleres por tipo</h2>
@@ -13771,7 +16893,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/talleres/tipo/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -13782,6 +16907,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -13878,6 +17006,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-talleres-tipo--tipo-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-talleres-tipo--tipo-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-talleres-tipo--tipo-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>tipo</code></b>&nbsp;&nbsp;
@@ -13907,7 +17068,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/talleres/instructor/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -13918,6 +17082,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -14014,6 +17181,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-talleres-instructor--instructor-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-talleres-instructor--instructor-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-talleres-instructor--instructor-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>instructor</code></b>&nbsp;&nbsp;
@@ -14043,7 +17243,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/talleres/con-cupos" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -14054,6 +17257,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -14150,6 +17356,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-talleres-con-cupos"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-talleres-con-cupos"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-talleres-con-cupos"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-talleres-gratuitos">Obtener talleres gratuitos</h2>
@@ -14167,7 +17406,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/talleres/gratuitos" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -14178,6 +17420,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -14274,6 +17519,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-talleres-gratuitos"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-talleres-gratuitos"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-talleres-gratuitos"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-talleres-usuario--idUsuario-">Obtener talleres de un usuario</h2>
@@ -14291,7 +17569,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/talleres/usuario/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -14302,6 +17583,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -14398,6 +17682,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-talleres-usuario--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-talleres-usuario--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-talleres-usuario--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -14427,7 +17744,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/talleres/estadisticas" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -14438,6 +17758,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -14534,6 +17857,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-talleres-estadisticas"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-talleres-estadisticas"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-talleres-estadisticas"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-recomendaciones-usuario--idUsuario-">Obtener recomendaciones de un usuario</h2>
@@ -14551,7 +17907,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/recomendaciones/usuario/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -14562,6 +17921,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -14658,6 +18020,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-recomendaciones-usuario--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-recomendaciones-usuario--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-recomendaciones-usuario--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -14687,7 +18082,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/recomendaciones/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -14698,6 +18096,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -14794,6 +18195,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-recomendaciones--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-recomendaciones--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-recomendaciones--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -14824,9 +18258,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/recomendaciones" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"id_usuario\": \"consequatur\",
-    \"tipo_recomendacion\": \"salud\",
+    \"tipo_recomendacion\": \"actividad_fisica\",
     \"titulo\": \"mqeopfuudtdsufvyvddqa\",
     \"descripcion\": \"mniihfqcoynlazghdtqtq\",
     \"contenido\": \"xbajwbpilpmufinllwloa\",
@@ -14844,11 +18281,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
     "id_usuario": "consequatur",
-    "tipo_recomendacion": "salud",
+    "tipo_recomendacion": "actividad_fisica",
     "titulo": "mqeopfuudtdsufvyvddqa",
     "descripcion": "mniihfqcoynlazghdtqtq",
     "contenido": "xbajwbpilpmufinllwloa",
@@ -14935,6 +18375,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-recomendaciones"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-recomendaciones"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-recomendaciones"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>id_usuario</code></b>&nbsp;&nbsp;
@@ -14953,10 +18426,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="tipo_recomendacion"                data-endpoint="POSTapi-recomendaciones"
-               value="salud"
+               value="actividad_fisica"
                data-component="body">
     <br>
-<p>Example: <code>salud</code></p>
+<p>Example: <code>actividad_fisica</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>nutricion</code></li> <li><code>actividad_fisica</code></li> <li><code>peso</code></li> <li><code>salud</code></li> <li><code>general</code></li></ul>
         </div>
@@ -15033,8 +18506,11 @@ Must be one of:
     "http://localhost:8000/api/recomendaciones/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
-    \"tipo_recomendacion\": \"nutricion\",
+    \"tipo_recomendacion\": \"actividad_fisica\",
     \"titulo\": \"vmqeopfuudtdsufvyvddq\",
     \"descripcion\": \"amniihfqcoynlazghdtqt\",
     \"contenido\": \"qxbajwbpilpmufinllwlo\",
@@ -15052,10 +18528,13 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
-    "tipo_recomendacion": "nutricion",
+    "tipo_recomendacion": "actividad_fisica",
     "titulo": "vmqeopfuudtdsufvyvddq",
     "descripcion": "amniihfqcoynlazghdtqt",
     "contenido": "qxbajwbpilpmufinllwlo",
@@ -15142,6 +18621,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PUTapi-recomendaciones--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PUTapi-recomendaciones--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PUTapi-recomendaciones--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -15161,10 +18673,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="tipo_recomendacion"                data-endpoint="PUTapi-recomendaciones--id-"
-               value="nutricion"
+               value="actividad_fisica"
                data-component="body">
     <br>
-<p>Example: <code>nutricion</code></p>
+<p>Example: <code>actividad_fisica</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>nutricion</code></li> <li><code>actividad_fisica</code></li> <li><code>peso</code></li> <li><code>salud</code></li> <li><code>general</code></li></ul>
         </div>
@@ -15240,7 +18752,10 @@ Must be one of:
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost:8000/api/recomendaciones/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -15251,6 +18766,9 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -15331,6 +18849,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="DELETEapi-recomendaciones--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="DELETEapi-recomendaciones--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="DELETEapi-recomendaciones--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -15360,7 +18911,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request PATCH \
     "http://localhost:8000/api/recomendaciones/consequatur/leer" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -15371,6 +18925,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -15451,6 +19008,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PATCHapi-recomendaciones--id--leer"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PATCHapi-recomendaciones--id--leer"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PATCHapi-recomendaciones--id--leer"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -15480,7 +19070,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/recomendaciones/no-leidas/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -15491,6 +19084,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -15587,6 +19183,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-recomendaciones-no-leidas--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-recomendaciones-no-leidas--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-recomendaciones-no-leidas--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -15616,7 +19245,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/recomendaciones/tipo/consequatur/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -15627,6 +19259,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -15723,6 +19358,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-recomendaciones-tipo--idUsuario---tipo-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-recomendaciones-tipo--idUsuario---tipo-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-recomendaciones-tipo--idUsuario---tipo-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -15763,7 +19431,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/recomendaciones/prioridad/consequatur/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -15774,6 +19445,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -15870,6 +19544,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-recomendaciones-prioridad--idUsuario---prioridad-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-recomendaciones-prioridad--idUsuario---prioridad-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-recomendaciones-prioridad--idUsuario---prioridad-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -15910,7 +19617,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/recomendaciones/recientes/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -15921,6 +19631,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -16017,6 +19730,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-recomendaciones-recientes--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-recomendaciones-recientes--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-recomendaciones-recientes--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -16046,7 +19792,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/recomendaciones/estadisticas/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -16057,6 +19806,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -16153,6 +19905,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-recomendaciones-estadisticas--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-recomendaciones-estadisticas--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-recomendaciones-estadisticas--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -16182,7 +19967,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/historial-peso/usuario/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -16193,6 +19981,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -16289,6 +20080,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-historial-peso-usuario--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-historial-peso-usuario--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-historial-peso-usuario--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -16318,7 +20142,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/historial-peso/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -16329,6 +20156,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -16425,6 +20255,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-historial-peso--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-historial-peso--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-historial-peso--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -16455,9 +20318,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/historial-peso" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"id_usuario\": \"consequatur\",
-    \"fecha_registro\": \"2025-07-08T02:48:05\",
+    \"fecha_registro\": \"2025-07-08T05:35:20\",
     \"peso_kg\": 13,
     \"altura_cm\": 16,
     \"notas\": \"eopfuudtdsufvyvddqamn\"
@@ -16473,11 +20339,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
     "id_usuario": "consequatur",
-    "fecha_registro": "2025-07-08T02:48:05",
+    "fecha_registro": "2025-07-08T05:35:20",
     "peso_kg": 13,
     "altura_cm": 16,
     "notas": "eopfuudtdsufvyvddqamn"
@@ -16562,6 +20431,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-historial-peso"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-historial-peso"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-historial-peso"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>id_usuario</code></b>&nbsp;&nbsp;
@@ -16580,10 +20482,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="fecha_registro"                data-endpoint="POSTapi-historial-peso"
-               value="2025-07-08T02:48:05"
+               value="2025-07-08T05:35:20"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-07-08T02:48:05</code></p>
+<p>Must be a valid date. Example: <code>2025-07-08T05:35:20</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>peso_kg</code></b>&nbsp;&nbsp;
@@ -16636,8 +20538,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/historial-peso/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
-    \"fecha_registro\": \"2025-07-08T02:48:05\",
+    \"fecha_registro\": \"2025-07-08T05:35:20\",
     \"peso_kg\": 21,
     \"altura_cm\": 13,
     \"notas\": \"qeopfuudtdsufvyvddqam\"
@@ -16653,10 +20558,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
-    "fecha_registro": "2025-07-08T02:48:05",
+    "fecha_registro": "2025-07-08T05:35:20",
     "peso_kg": 21,
     "altura_cm": 13,
     "notas": "qeopfuudtdsufvyvddqam"
@@ -16741,6 +20649,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PUTapi-historial-peso--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PUTapi-historial-peso--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PUTapi-historial-peso--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -16760,10 +20701,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="fecha_registro"                data-endpoint="PUTapi-historial-peso--id-"
-               value="2025-07-08T02:48:05"
+               value="2025-07-08T05:35:20"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-07-08T02:48:05</code></p>
+<p>Must be a valid date. Example: <code>2025-07-08T05:35:20</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>peso_kg</code></b>&nbsp;&nbsp;
@@ -16815,7 +20756,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost:8000/api/historial-peso/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -16826,6 +20770,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -16906,6 +20853,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="DELETEapi-historial-peso--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="DELETEapi-historial-peso--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="DELETEapi-historial-peso--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -16935,7 +20915,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/historial-peso/ultimo/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -16946,6 +20929,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -17042,6 +21028,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-historial-peso-ultimo--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-historial-peso-ultimo--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-historial-peso-ultimo--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -17072,8 +21091,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/historial-peso/rango-fechas/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
-    \"fecha_inicio\": \"2025-07-08T02:48:05\",
+    \"fecha_inicio\": \"2025-07-08T05:35:20\",
     \"fecha_fin\": \"2106-08-06\"
 }"
 </code></pre></div>
@@ -17087,10 +21109,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
-    "fecha_inicio": "2025-07-08T02:48:05",
+    "fecha_inicio": "2025-07-08T05:35:20",
     "fecha_fin": "2106-08-06"
 };
 
@@ -17173,6 +21198,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-historial-peso-rango-fechas--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-historial-peso-rango-fechas--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-historial-peso-rango-fechas--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -17192,10 +21250,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="fecha_inicio"                data-endpoint="POSTapi-historial-peso-rango-fechas--idUsuario-"
-               value="2025-07-08T02:48:05"
+               value="2025-07-08T05:35:20"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-07-08T02:48:05</code></p>
+<p>Must be a valid date. Example: <code>2025-07-08T05:35:20</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>fecha_fin</code></b>&nbsp;&nbsp;
@@ -17225,7 +21283,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/historial-peso/estadisticas/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -17236,6 +21297,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -17332,6 +21396,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-historial-peso-estadisticas--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-historial-peso-estadisticas--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-historial-peso-estadisticas--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -17361,7 +21458,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/historial-peso/progreso/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -17372,6 +21472,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -17468,6 +21571,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-historial-peso-progreso--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-historial-peso-progreso--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-historial-peso-progreso--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -17497,7 +21633,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/categorias-comida" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -17508,6 +21647,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -17604,6 +21746,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-categorias-comida"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-categorias-comida"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-categorias-comida"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-categorias-comida--id-">Obtener una categoría específica</h2>
@@ -17621,7 +21796,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/categorias-comida/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -17632,6 +21810,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -17728,6 +21909,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-categorias-comida--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-categorias-comida--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-categorias-comida--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -17758,6 +21972,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/categorias-comida" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"nombre\": \"vmqeopfuudtdsufvyvddq\",
     \"descripcion\": \"consequatur\"
@@ -17773,6 +21990,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
@@ -17859,6 +22079,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-categorias-comida"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-categorias-comida"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-categorias-comida"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>nombre</code></b>&nbsp;&nbsp;
@@ -17900,6 +22153,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/categorias-comida/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"descripcion\": \"consequatur\"
 }"
@@ -17914,6 +22170,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
@@ -17999,6 +22258,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PUTapi-categorias-comida--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PUTapi-categorias-comida--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PUTapi-categorias-comida--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -18051,7 +22343,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost:8000/api/categorias-comida/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -18062,6 +22357,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -18142,6 +22440,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="DELETEapi-categorias-comida--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="DELETEapi-categorias-comida--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="DELETEapi-categorias-comida--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -18171,7 +22502,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/lugares-comida" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -18182,6 +22516,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -18278,6 +22615,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-lugares-comida"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-lugares-comida"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-lugares-comida"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-lugares-comida--id-">Obtener un lugar específico</h2>
@@ -18295,7 +22665,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/lugares-comida/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -18306,6 +22679,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -18402,6 +22778,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-lugares-comida--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-lugares-comida--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-lugares-comida--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -18432,11 +22841,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/lugares-comida" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"nombre\": \"vmqeopfuudtdsufvyvddq\",
     \"direccion\": \"amniihfqcoynlazghdtqt\",
     \"telefono\": \"qxbajwbpilpmufinl\",
-    \"horario_apertura\": \"02:48\",
+    \"horario_apertura\": \"05:35\",
     \"horario_cierre\": \"2106-08-06\",
     \"tipo_establecimiento\": \"otro\"
 }"
@@ -18451,13 +22863,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
     "nombre": "vmqeopfuudtdsufvyvddq",
     "direccion": "amniihfqcoynlazghdtqt",
     "telefono": "qxbajwbpilpmufinl",
-    "horario_apertura": "02:48",
+    "horario_apertura": "05:35",
     "horario_cierre": "2106-08-06",
     "tipo_establecimiento": "otro"
 };
@@ -18541,6 +22956,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-lugares-comida"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-lugares-comida"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-lugares-comida"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>nombre</code></b>&nbsp;&nbsp;
@@ -18581,10 +23029,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="horario_apertura"                data-endpoint="POSTapi-lugares-comida"
-               value="02:48"
+               value="05:35"
                data-component="body">
     <br>
-<p>Must be a valid date in the format <code>H:i</code>. Example: <code>02:48</code></p>
+<p>Must be a valid date in the format <code>H:i</code>. Example: <code>05:35</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>horario_cierre</code></b>&nbsp;&nbsp;
@@ -18628,13 +23076,16 @@ Must be one of:
     "http://localhost:8000/api/lugares-comida/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"nombre\": \"vmqeopfuudtdsufvyvddq\",
     \"direccion\": \"amniihfqcoynlazghdtqt\",
     \"telefono\": \"qxbajwbpilpmufinl\",
-    \"horario_apertura\": \"02:48\",
+    \"horario_apertura\": \"05:35\",
     \"horario_cierre\": \"2106-08-06\",
-    \"tipo_establecimiento\": \"restaurante\"
+    \"tipo_establecimiento\": \"cafeteria\"
 }"
 </code></pre></div>
 
@@ -18647,15 +23098,18 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
     "nombre": "vmqeopfuudtdsufvyvddq",
     "direccion": "amniihfqcoynlazghdtqt",
     "telefono": "qxbajwbpilpmufinl",
-    "horario_apertura": "02:48",
+    "horario_apertura": "05:35",
     "horario_cierre": "2106-08-06",
-    "tipo_establecimiento": "restaurante"
+    "tipo_establecimiento": "cafeteria"
 };
 
 fetch(url, {
@@ -18737,6 +23191,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PUTapi-lugares-comida--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PUTapi-lugares-comida--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PUTapi-lugares-comida--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -18789,10 +23276,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="horario_apertura"                data-endpoint="PUTapi-lugares-comida--id-"
-               value="02:48"
+               value="05:35"
                data-component="body">
     <br>
-<p>Must be a valid date in the format <code>H:i</code>. Example: <code>02:48</code></p>
+<p>Must be a valid date in the format <code>H:i</code>. Example: <code>05:35</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>horario_cierre</code></b>&nbsp;&nbsp;
@@ -18811,10 +23298,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="tipo_establecimiento"                data-endpoint="PUTapi-lugares-comida--id-"
-               value="restaurante"
+               value="cafeteria"
                data-component="body">
     <br>
-<p>Example: <code>restaurante</code></p>
+<p>Example: <code>cafeteria</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>restaurante</code></li> <li><code>cafeteria</code></li> <li><code>comedor</code></li> <li><code>bar</code></li> <li><code>otro</code></li></ul>
         </div>
@@ -18835,7 +23322,10 @@ Must be one of:
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost:8000/api/lugares-comida/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -18846,6 +23336,9 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -18926,6 +23419,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="DELETEapi-lugares-comida--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="DELETEapi-lugares-comida--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="DELETEapi-lugares-comida--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -18955,7 +23481,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/tipos-ejercicio" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -18966,6 +23495,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -19062,6 +23594,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-tipos-ejercicio"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-tipos-ejercicio"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-tipos-ejercicio"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-tipos-ejercicio--id-">Obtener un tipo de ejercicio específico</h2>
@@ -19079,7 +23644,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/tipos-ejercicio/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -19090,6 +23658,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -19186,6 +23757,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-tipos-ejercicio--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-tipos-ejercicio--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-tipos-ejercicio--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -19216,10 +23820,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/tipos-ejercicio" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"nombre\": \"vmqeopfuudtdsufvyvddq\",
     \"descripcion\": \"consequatur\",
-    \"categoria\": \"cardio\",
+    \"categoria\": \"flexibilidad\",
     \"intensidad_promedio\": 3,
     \"calorias_por_hora\": 56
 }"
@@ -19234,12 +23841,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
     "nombre": "vmqeopfuudtdsufvyvddq",
     "descripcion": "consequatur",
-    "categoria": "cardio",
+    "categoria": "flexibilidad",
     "intensidad_promedio": 3,
     "calorias_por_hora": 56
 };
@@ -19323,6 +23933,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-tipos-ejercicio"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-tipos-ejercicio"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-tipos-ejercicio"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>nombre</code></b>&nbsp;&nbsp;
@@ -19352,10 +23995,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="categoria"                data-endpoint="POSTapi-tipos-ejercicio"
-               value="cardio"
+               value="flexibilidad"
                data-component="body">
     <br>
-<p>Example: <code>cardio</code></p>
+<p>Example: <code>flexibilidad</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>cardio</code></li> <li><code>fuerza</code></li> <li><code>flexibilidad</code></li> <li><code>equilibrio</code></li> <li><code>deportes</code></li></ul>
         </div>
@@ -19399,9 +24042,12 @@ Must be one of:
     "http://localhost:8000/api/tipos-ejercicio/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"descripcion\": \"consequatur\",
-    \"categoria\": \"equilibrio\",
+    \"categoria\": \"fuerza\",
     \"intensidad_promedio\": 3,
     \"calorias_por_hora\": 56
 }"
@@ -19416,11 +24062,14 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
     "descripcion": "consequatur",
-    "categoria": "equilibrio",
+    "categoria": "fuerza",
     "intensidad_promedio": 3,
     "calorias_por_hora": 56
 };
@@ -19504,6 +24153,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PUTapi-tipos-ejercicio--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PUTapi-tipos-ejercicio--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PUTapi-tipos-ejercicio--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -19545,10 +24227,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="categoria"                data-endpoint="PUTapi-tipos-ejercicio--id-"
-               value="equilibrio"
+               value="fuerza"
                data-component="body">
     <br>
-<p>Example: <code>equilibrio</code></p>
+<p>Example: <code>fuerza</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>cardio</code></li> <li><code>fuerza</code></li> <li><code>flexibilidad</code></li> <li><code>equilibrio</code></li> <li><code>deportes</code></li></ul>
         </div>
@@ -19591,7 +24273,10 @@ Must be one of:
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost:8000/api/tipos-ejercicio/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -19602,6 +24287,9 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -19682,6 +24370,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="DELETEapi-tipos-ejercicio--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="DELETEapi-tipos-ejercicio--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="DELETEapi-tipos-ejercicio--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -19711,7 +24432,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/rutinas-ejercicio" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -19722,6 +24446,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -19818,6 +24545,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-rutinas-ejercicio"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-rutinas-ejercicio"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-rutinas-ejercicio"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-rutinas-ejercicio--id-">Obtener una rutina específica</h2>
@@ -19835,7 +24595,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/rutinas-ejercicio/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -19846,6 +24609,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -19942,6 +24708,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-rutinas-ejercicio--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-rutinas-ejercicio--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-rutinas-ejercicio--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -19972,6 +24771,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/rutinas-ejercicio" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"nombre\": \"vmqeopfuudtdsufvyvddq\",
     \"descripcion\": \"amniihfqcoynlazghdtqt\",
@@ -19993,6 +24795,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
@@ -20084,6 +24889,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="header">
     <br>
 <p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-rutinas-ejercicio"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-rutinas-ejercicio"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-rutinas-ejercicio"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
             </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -20194,10 +25032,13 @@ Must be one of:
     "http://localhost:8000/api/rutinas-ejercicio/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"nombre\": \"vmqeopfuudtdsufvyvddq\",
     \"descripcion\": \"amniihfqcoynlazghdtqt\",
-    \"tipo_rutina\": \"cardio\",
+    \"tipo_rutina\": \"fuerza\",
     \"nivel_dificultad\": 4,
     \"duracion_estimada\": 23,
     \"calorias_estimadas\": 2,
@@ -20216,12 +25057,15 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
     "nombre": "vmqeopfuudtdsufvyvddq",
     "descripcion": "amniihfqcoynlazghdtqt",
-    "tipo_rutina": "cardio",
+    "tipo_rutina": "fuerza",
     "nivel_dificultad": 4,
     "duracion_estimada": 23,
     "calorias_estimadas": 2,
@@ -20309,6 +25153,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PUTapi-rutinas-ejercicio--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PUTapi-rutinas-ejercicio--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PUTapi-rutinas-ejercicio--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -20350,10 +25227,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="tipo_rutina"                data-endpoint="PUTapi-rutinas-ejercicio--id-"
-               value="cardio"
+               value="fuerza"
                data-component="body">
     <br>
-<p>Example: <code>cardio</code></p>
+<p>Example: <code>fuerza</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>fuerza</code></li> <li><code>cardio</code></li> <li><code>flexibilidad</code></li> <li><code>equilibrio</code></li> <li><code>mixta</code></li></ul>
         </div>
@@ -20450,7 +25327,10 @@ Must be one of:
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost:8000/api/rutinas-ejercicio/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -20461,6 +25341,9 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -20541,6 +25424,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="DELETEapi-rutinas-ejercicio--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="DELETEapi-rutinas-ejercicio--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="DELETEapi-rutinas-ejercicio--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -20570,7 +25486,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/rutinas-ejercicio/activas" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -20581,6 +25500,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -20677,6 +25599,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-rutinas-ejercicio-activas"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-rutinas-ejercicio-activas"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-rutinas-ejercicio-activas"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-rutinas-ejercicio-tipo--tipo-">Obtener rutinas por tipo</h2>
@@ -20694,7 +25649,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/rutinas-ejercicio/tipo/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -20705,6 +25663,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -20801,6 +25762,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-rutinas-ejercicio-tipo--tipo-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-rutinas-ejercicio-tipo--tipo-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-rutinas-ejercicio-tipo--tipo-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>tipo</code></b>&nbsp;&nbsp;
@@ -20830,7 +25824,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/rutinas-ejercicio/dificultad/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -20841,6 +25838,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -20937,6 +25937,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-rutinas-ejercicio-dificultad--nivel-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-rutinas-ejercicio-dificultad--nivel-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-rutinas-ejercicio-dificultad--nivel-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>nivel</code></b>&nbsp;&nbsp;
@@ -20967,6 +26000,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/rutinas-ejercicio/por-duracion" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"duracion_minima\": 74,
     \"duracion_maxima\": 47
@@ -20982,6 +26018,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
@@ -21068,6 +26107,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-rutinas-ejercicio-por-duracion"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-rutinas-ejercicio-por-duracion"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-rutinas-ejercicio-por-duracion"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>duracion_minima</code></b>&nbsp;&nbsp;
@@ -21108,7 +26180,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/rutinas-ejercicio/populares" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -21119,6 +26194,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -21215,6 +26293,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-rutinas-ejercicio-populares"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-rutinas-ejercicio-populares"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-rutinas-ejercicio-populares"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-rutinas-ejercicio-estadisticas">Obtener estadísticas de rutinas</h2>
@@ -21232,7 +26343,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/rutinas-ejercicio/estadisticas" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -21243,6 +26357,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -21339,6 +26456,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-rutinas-ejercicio-estadisticas"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-rutinas-ejercicio-estadisticas"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-rutinas-ejercicio-estadisticas"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-usuario-desafios-usuario--idUsuario-">Obtener desafíos de un usuario</h2>
@@ -21356,7 +26506,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/usuario-desafios/usuario/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -21367,6 +26520,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -21463,6 +26619,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-usuario-desafios-usuario--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-usuario-desafios-usuario--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-usuario-desafios-usuario--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -21492,7 +26681,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/usuario-desafios/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -21503,6 +26695,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -21599,6 +26794,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-usuario-desafios--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-usuario-desafios--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-usuario-desafios--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -21629,6 +26857,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/usuario-desafios" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"id_usuario\": \"consequatur\",
     \"id_desafio\": \"consequatur\"
@@ -21644,6 +26875,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
@@ -21730,6 +26964,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-usuario-desafios"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-usuario-desafios"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-usuario-desafios"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>id_usuario</code></b>&nbsp;&nbsp;
@@ -21771,9 +27038,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/usuario-desafios/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"progreso_actual\": 21,
-    \"estado\": \"pausado\"
+    \"estado\": \"en_progreso\"
 }"
 </code></pre></div>
 
@@ -21786,11 +27056,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
     "progreso_actual": 21,
-    "estado": "pausado"
+    "estado": "en_progreso"
 };
 
 fetch(url, {
@@ -21872,6 +27145,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PUTapi-usuario-desafios--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PUTapi-usuario-desafios--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PUTapi-usuario-desafios--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -21902,10 +27208,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="estado"                data-endpoint="PUTapi-usuario-desafios--id-"
-               value="pausado"
+               value="en_progreso"
                data-component="body">
     <br>
-<p>Example: <code>pausado</code></p>
+<p>Example: <code>en_progreso</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>en_progreso</code></li> <li><code>pausado</code></li> <li><code>abandonado</code></li> <li><code>completado</code></li></ul>
         </div>
@@ -21926,7 +27232,10 @@ Must be one of:
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost:8000/api/usuario-desafios/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -21937,6 +27246,9 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -22017,6 +27329,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="DELETEapi-usuario-desafios--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="DELETEapi-usuario-desafios--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="DELETEapi-usuario-desafios--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -22046,7 +27391,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/usuario-desafios/activos/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -22057,6 +27405,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -22153,6 +27504,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-usuario-desafios-activos--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-usuario-desafios-activos--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-usuario-desafios-activos--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -22182,7 +27566,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/usuario-desafios/completados/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -22193,6 +27580,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -22289,6 +27679,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-usuario-desafios-completados--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-usuario-desafios-completados--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-usuario-desafios-completados--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -22318,7 +27741,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/usuario-desafios/vencidos/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -22329,6 +27755,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -22425,6 +27854,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-usuario-desafios-vencidos--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-usuario-desafios-vencidos--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-usuario-desafios-vencidos--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -22454,7 +27916,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request PATCH \
     "http://localhost:8000/api/usuario-desafios/consequatur/completar" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -22465,6 +27930,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -22545,6 +28013,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PATCHapi-usuario-desafios--id--completar"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PATCHapi-usuario-desafios--id--completar"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PATCHapi-usuario-desafios--id--completar"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -22574,7 +28075,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/usuario-desafios/estadisticas/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -22585,6 +28089,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -22681,6 +28188,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-usuario-desafios-estadisticas--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-usuario-desafios-estadisticas--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-usuario-desafios-estadisticas--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -22710,7 +28250,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/usuario-eventos/usuario/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -22721,6 +28264,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -22817,6 +28363,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-usuario-eventos-usuario--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-usuario-eventos-usuario--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-usuario-eventos-usuario--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -22846,7 +28425,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/usuario-eventos/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -22857,6 +28439,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -22953,6 +28538,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-usuario-eventos--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-usuario-eventos--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-usuario-eventos--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -22983,6 +28601,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/usuario-eventos" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"id_usuario\": \"consequatur\",
     \"id_evento\": \"consequatur\"
@@ -22998,6 +28619,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
@@ -23084,6 +28708,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-usuario-eventos"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-usuario-eventos"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-usuario-eventos"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>id_usuario</code></b>&nbsp;&nbsp;
@@ -23125,9 +28782,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/usuario-eventos/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
-    \"estado\": \"no_asistio\",
-    \"asistio\": true,
+    \"estado\": \"cancelado\",
+    \"asistio\": false,
     \"notas\": \"vmqeopfuudtdsufvyvddq\"
 }"
 </code></pre></div>
@@ -23141,11 +28801,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
-    "estado": "no_asistio",
-    "asistio": true,
+    "estado": "cancelado",
+    "asistio": false,
     "notas": "vmqeopfuudtdsufvyvddq"
 };
 
@@ -23228,6 +28891,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PUTapi-usuario-eventos--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PUTapi-usuario-eventos--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PUTapi-usuario-eventos--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -23247,10 +28943,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="estado"                data-endpoint="PUTapi-usuario-eventos--id-"
-               value="no_asistio"
+               value="cancelado"
                data-component="body">
     <br>
-<p>Example: <code>no_asistio</code></p>
+<p>Example: <code>cancelado</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>inscrito</code></li> <li><code>cancelado</code></li> <li><code>asistio</code></li> <li><code>no_asistio</code></li></ul>
         </div>
@@ -23273,7 +28969,7 @@ Must be one of:
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notas</code></b>&nbsp;&nbsp;
@@ -23303,7 +28999,10 @@ Must be one of:
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost:8000/api/usuario-eventos/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -23314,6 +29013,9 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -23394,6 +29096,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="DELETEapi-usuario-eventos--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="DELETEapi-usuario-eventos--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="DELETEapi-usuario-eventos--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -23423,7 +29158,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request PATCH \
     "http://localhost:8000/api/usuario-eventos/consequatur/asistencia" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -23434,6 +29172,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -23514,6 +29255,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PATCHapi-usuario-eventos--id--asistencia"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PATCHapi-usuario-eventos--id--asistencia"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PATCHapi-usuario-eventos--id--asistencia"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -23543,7 +29317,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/usuario-eventos/futuros/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -23554,6 +29331,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -23650,6 +29430,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-usuario-eventos-futuros--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-usuario-eventos-futuros--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-usuario-eventos-futuros--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -23679,7 +29492,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/usuario-eventos/pasados/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -23690,6 +29506,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -23786,6 +29605,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-usuario-eventos-pasados--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-usuario-eventos-pasados--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-usuario-eventos-pasados--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -23815,7 +29667,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/usuario-eventos/asistidos/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -23826,6 +29681,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -23922,6 +29780,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-usuario-eventos-asistidos--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-usuario-eventos-asistidos--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-usuario-eventos-asistidos--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -23951,7 +29842,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/usuario-eventos/cancelados/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -23962,6 +29856,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -24058,6 +29955,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-usuario-eventos-cancelados--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-usuario-eventos-cancelados--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-usuario-eventos-cancelados--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -24087,7 +30017,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/usuario-eventos/estadisticas/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -24098,6 +30031,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -24194,6 +30130,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-usuario-eventos-estadisticas--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-usuario-eventos-estadisticas--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-usuario-eventos-estadisticas--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -24223,7 +30192,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/inscripciones-talleres/usuario/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -24234,6 +30206,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -24330,6 +30305,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-inscripciones-talleres-usuario--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-inscripciones-talleres-usuario--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-inscripciones-talleres-usuario--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -24359,7 +30367,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/inscripciones-talleres/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -24370,6 +30381,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -24466,6 +30480,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-inscripciones-talleres--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-inscripciones-talleres--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-inscripciones-talleres--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -24496,6 +30543,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/inscripciones-talleres" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"id_usuario\": \"consequatur\",
     \"id_taller\": \"consequatur\"
@@ -24511,6 +30561,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
@@ -24597,6 +30650,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="POSTapi-inscripciones-talleres"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="POSTapi-inscripciones-talleres"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="POSTapi-inscripciones-talleres"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>id_usuario</code></b>&nbsp;&nbsp;
@@ -24638,6 +30724,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/inscripciones-talleres/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"estado\": \"no_asistio\",
     \"asistio\": true,
@@ -24655,6 +30744,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
@@ -24743,6 +30835,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PUTapi-inscripciones-talleres--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PUTapi-inscripciones-talleres--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PUTapi-inscripciones-talleres--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -24829,7 +30954,10 @@ Must be one of:
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost:8000/api/inscripciones-talleres/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -24840,6 +30968,9 @@ Must be one of:
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -24920,6 +31051,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="DELETEapi-inscripciones-talleres--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="DELETEapi-inscripciones-talleres--id-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="DELETEapi-inscripciones-talleres--id-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -24949,7 +31113,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request PATCH \
     "http://localhost:8000/api/inscripciones-talleres/consequatur/asistencia" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -24960,6 +31127,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -25040,6 +31210,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PATCHapi-inscripciones-talleres--id--asistencia"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PATCHapi-inscripciones-talleres--id--asistencia"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PATCHapi-inscripciones-talleres--id--asistencia"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -25070,6 +31273,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost:8000/api/inscripciones-talleres/consequatur/calificar" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache" \
     --data "{
     \"calificacion\": 5,
     \"comentarios\": \"mqeopfuudtdsufvyvddqa\"
@@ -25085,6 +31291,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 let body = {
@@ -25171,6 +31380,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="PATCHapi-inscripciones-talleres--id--calificar"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="PATCHapi-inscripciones-talleres--id--calificar"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="PATCHapi-inscripciones-talleres--id--calificar"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -25223,7 +31465,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/inscripciones-talleres/futuros/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -25234,6 +31479,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -25330,6 +31578,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-inscripciones-talleres-futuros--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-inscripciones-talleres-futuros--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-inscripciones-talleres-futuros--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -25359,7 +31640,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/inscripciones-talleres/pasados/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -25370,6 +31654,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -25466,6 +31753,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-inscripciones-talleres-pasados--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-inscripciones-talleres-pasados--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-inscripciones-talleres-pasados--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -25495,7 +31815,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/inscripciones-talleres/asistidos/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -25506,6 +31829,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -25602,6 +31928,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-inscripciones-talleres-asistidos--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-inscripciones-talleres-asistidos--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-inscripciones-talleres-asistidos--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -25631,7 +31990,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/inscripciones-talleres/cancelados/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -25642,6 +32004,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -25738,6 +32103,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-inscripciones-talleres-cancelados--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-inscripciones-talleres-cancelados--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-inscripciones-talleres-cancelados--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -25767,7 +32165,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/inscripciones-talleres/estadisticas/consequatur" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -25778,6 +32179,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -25874,6 +32278,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-inscripciones-talleres-estadisticas--idUsuario-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-inscripciones-talleres-estadisticas--idUsuario-"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-inscripciones-talleres-estadisticas--idUsuario-"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>idUsuario</code></b>&nbsp;&nbsp;
@@ -25903,7 +32340,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/user" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -25914,6 +32354,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -26010,6 +32453,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-user"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-user"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-user"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
+            </div>
                         </form>
 
                     <h2 id="endpoints-GETapi-test">GET api/test</h2>
@@ -26027,7 +32503,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/test" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "X-API-Version: v1" \
+    --header "X-Requested-With: XMLHttpRequest" \
+    --header "Cache-Control: no-cache"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -26038,6 +32517,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "X-API-Version": "v1",
+    "X-Requested-With": "XMLHttpRequest",
+    "Cache-Control": "no-cache",
 };
 
 fetch(url, {
@@ -26062,7 +32544,7 @@ access-control-allow-origin: *
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;API funcionando correctamente&quot;,
-    &quot;timestamp&quot;: &quot;2025-07-08T02:48:05.718702Z&quot;
+    &quot;timestamp&quot;: &quot;2025-07-08T05:35:20.307370Z&quot;
 }</code>
  </pre>
     </span>
@@ -26134,6 +32616,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="header">
     <br>
 <p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-API-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-API-Version"                data-endpoint="GETapi-test"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>X-Requested-With</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="X-Requested-With"                data-endpoint="GETapi-test"
+               value="XMLHttpRequest"
+               data-component="header">
+    <br>
+<p>Example: <code>XMLHttpRequest</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Cache-Control</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Cache-Control"                data-endpoint="GETapi-test"
+               value="no-cache"
+               data-component="header">
+    <br>
+<p>Example: <code>no-cache</code></p>
             </div>
                         </form>
 
