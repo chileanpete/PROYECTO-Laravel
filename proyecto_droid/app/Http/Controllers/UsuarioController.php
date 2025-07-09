@@ -38,28 +38,56 @@ class UsuarioController extends Controller
      */
     public function show(int $id): JsonResponse
     {
-        $usuario = Usuario::with([
-            'configuracion',
-            'historialPeso',
-            'registrosActividad.tipoEjercicio',
-            'registrosConsumo.plato',
-            'favoritosPlatos.plato',
-            'objetivosAlimentacion',
-            'usuarioDesafios.desafio',
-            'usuarioEventos.eventoAcademico'
-        ])->find($id);
+        try {
+            // Verificar que el usuario esté autenticado
+            $usuarioAutenticado = auth('sanctum')->user();
+            
+            if (!$usuarioAutenticado) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Usuario no autenticado'
+                ], 401);
+            }
 
-        if (!$usuario) {
+            $usuario = Usuario::find($id);
+
+            if (!$usuario) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Usuario no encontrado'
+                ], 404);
+            }
+
+            // Verificar que el usuario esté activo
+            if (!$usuario->activo) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Usuario inactivo'
+                ], 403);
+            }
+
+            // Opcional: Para mayor seguridad, verificar que el usuario solo pueda ver su propio perfil
+            // Comentado temporalmente para permitir flexibilidad
+            /*
+            if ($usuarioAutenticado->id_usuario !== $id) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'No tienes permisos para ver este perfil'
+                ], 403);
+            }
+            */
+
+            return response()->json([
+                'success' => true,
+                'data' => $usuario
+            ]);
+        } catch (\Exception $e) {
             return response()->json([
                 'success' => false,
-                'message' => 'Usuario no encontrado'
-            ], 404);
+                'message' => 'Error interno del servidor',
+                'error' => $e->getMessage()
+            ], 500);
         }
-
-        return response()->json([
-            'success' => true,
-            'data' => $usuario
-        ]);
     }
 
     /**
@@ -106,10 +134,16 @@ class UsuarioController extends Controller
             'alergias' => $request->alergias
         ]);
 
+        // Crear token de autenticación para el usuario registrado
+        $token = $usuario->createToken('auth-token')->plainTextToken;
+
         return response()->json([
             'success' => true,
             'message' => 'Usuario creado exitosamente',
-            'data' => $usuario
+            'data' => [
+                'usuario' => $usuario,
+                'token' => $token
+            ]
         ], 201);
     }
 

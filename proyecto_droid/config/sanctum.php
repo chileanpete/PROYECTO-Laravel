@@ -38,6 +38,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Default Model
+    |--------------------------------------------------------------------------
+    |
+    | This option defines the default Eloquent model that should be used
+    | to retrieve your users. Of course, it may be changed to any model
+    | you have defined for your application's users.
+    |
+    */
+
+    'model' => App\Models\Usuario::class,
+
+    /*
+    |--------------------------------------------------------------------------
     | Expiration Minutes
     |--------------------------------------------------------------------------
     |

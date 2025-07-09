@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Laravel\Sanctum\HasApiTokens;
 
-class Usuario extends Model
+class Usuario extends Authenticatable
 {
     use HasApiTokens;
     
@@ -41,6 +41,10 @@ class Usuario extends Model
         'peso_kg' => 'decimal:2',
         'altura_cm' => 'integer',
         'puntos_totales' => 'integer'
+    ];
+
+    protected $hidden = [
+        'password_hash',
     ];
 
     // Relaciones
