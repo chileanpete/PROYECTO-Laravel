@@ -48,6 +48,7 @@ Route::middleware('auth:sanctum')->group(function () {
     // Platos
     Route::prefix('platos')->group(function () {
         Route::get('/', [PlatoController::class, 'index']);
+        Route::get('/simple', [PlatoController::class, 'simple']); // Nueva ruta para respuesta simplificada
         Route::get('/{id}', [PlatoController::class, 'show']);
         Route::post('/', [PlatoController::class, 'store']);
         Route::put('/{id}', [PlatoController::class, 'update']);

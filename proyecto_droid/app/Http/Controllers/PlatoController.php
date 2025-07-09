@@ -10,11 +10,54 @@ use Illuminate\Support\Facades\Validator;
 class PlatoController extends Controller
 {
     /**
+     * Obtener lista simplificada de platos (para evitar respuestas muy grandes)
+     */
+    public function simple(Request $request): JsonResponse
+    {
+        // Solo campos absolutamente esenciales para reducir tamaño de respuesta
+        $platos = Plato::select([
+            'id_plato',
+            'nombre',
+            'precio',
+            'calorias_por_porcion'
+        ])
+        ->where('disponible', true)
+        ->orderBy('nombre')
+        ->limit(50) // Límite fijo para garantizar respuesta pequeña
+        ->get();
+
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'data' => $platos,
+                'total' => $platos->count()
+            ]
+        ]);
+    }
+
+    /**
      * Obtener todos los platos
      */
     public function index(Request $request): JsonResponse
     {
-        $query = Plato::with(['lugar', 'categoria'])->where('disponible', true);
+        // Cargar solo campos esenciales para evitar JSON muy grandes
+        $query = Plato::select([
+            'id_plato',
+            'nombre', 
+            'descripcion',
+            'precio',
+            'calorias_por_porcion',
+            'proteinas_g',
+            'carbohidratos_g', 
+            'grasas_g',
+            'es_vegetariano',
+            'es_vegano',
+            'sin_gluten',
+            'imagen_url',
+            'id_categoria',
+            'id_lugar'
+        ])
+        ->where('disponible', true);
 
         // Filtros
         if ($request->has('categoria')) {
@@ -54,7 +97,8 @@ class PlatoController extends Controller
             $query->where('nombre', 'like', '%' . $request->buscar . '%');
         }
 
-        $platos = $query->paginate(20);
+        // Reducir paginación para evitar respuestas muy grandes
+        $platos = $query->paginate(10);
 
         return response()->json([
             'success' => true,
