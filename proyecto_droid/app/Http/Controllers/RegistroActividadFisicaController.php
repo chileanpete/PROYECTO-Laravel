@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\Usuario;
+use Illuminate\Support\Facades\Log;
 
 
 class RegistroActividadFisicaController extends Controller
@@ -21,14 +22,16 @@ class RegistroActividadFisicaController extends Controller
      */
     public function index(Request $request): JsonResponse
     {
+        if (!$request->has('id_usuario')) {
+            return response()->json([
+                'success' => false,
+                'message' => 'El parámetro id_usuario es obligatorio'
+            ], 400);
+        }
+
         $query = RegistroActividadFisica::with([
             'usuario', 'rutina', 'rutinaEjercicio', 'tipoEjercicio'
-        ]);
-
-        // Filtrar por usuario
-        if ($request->has('id_usuario')) {
-            $query->where('id_usuario', $request->id_usuario);
-        }
+        ])->where('id_usuario', $request->id_usuario);
 
         // Filtrar por fecha
         if ($request->has('fecha_inicio')) {
@@ -49,7 +52,7 @@ class RegistroActividadFisicaController extends Controller
             $query->where('completada', $request->completada);
         }
 
-        $registros = $query->orderBy('fecha_actividad', 'desc')->paginate(20);
+        $registros = $query->orderBy('fecha_actividad', 'desc')->get();
 
         return response()->json([
             'success' => true,
@@ -84,6 +87,8 @@ class RegistroActividadFisicaController extends Controller
      */
     public function store(Request $request): JsonResponse
     {
+        Log::info('Datos recibidos en registro actividad:', $request->all());
+
         $validator = Validator::make($request->all(), [
             'id_usuario' => 'required|exists:usuarios,id_usuario',
             'id_rutina' => 'nullable|exists:rutinas_ejercicio,id_rutina',
@@ -100,6 +105,7 @@ class RegistroActividadFisicaController extends Controller
         ]);
 
         if ($validator->fails()) {
+            Log::error('Validación fallida:', $validator->errors()->toArray());
             return response()->json([
                 'success' => false,
                 'message' => 'Datos de validación incorrectos',
@@ -110,21 +116,30 @@ class RegistroActividadFisicaController extends Controller
         // Calcular puntos basados en duración e intensidad
         $puntos = $this->calcularPuntos($request->duracion_minutos, $request->intensidad);
 
-        $registro = RegistroActividadFisica::create([
-            'id_usuario' => $request->id_usuario,
-            'id_rutina' => $request->id_rutina,
-            'id_rutina_ejercicio' => $request->id_rutina_ejercicio,
-            'id_tipo_ejercicio' => $request->id_tipo_ejercicio,
-            'fecha_actividad' => $request->fecha_actividad,
-            'hora_inicio' => $request->hora_inicio,
-            'hora_fin' => $request->hora_fin,
-            'duracion_minutos' => $request->duracion_minutos,
-            'calorias_quemadas' => $request->calorias_quemadas,
-            'intensidad' => $request->intensidad ?? 3,
-            'comentario' => $request->comentario,
-            'puntos_obtenidos' => $puntos,
-            'completada' => $request->completada ?? true
-        ]);
+        try {
+            $registro = RegistroActividadFisica::create([
+                'id_usuario' => $request->id_usuario,
+                'id_rutina' => $request->id_rutina,
+                'id_rutina_ejercicio' => $request->id_rutina_ejercicio,
+                'id_tipo_ejercicio' => $request->id_tipo_ejercicio,
+                'fecha_actividad' => $request->fecha_actividad,
+                'hora_inicio' => $request->hora_inicio,
+                'hora_fin' => $request->hora_fin,
+                'duracion_minutos' => $request->duracion_minutos,
+                'calorias_quemadas' => $request->calorias_quemadas,
+                'intensidad' => $request->intensidad ?? 3,
+                'comentario' => $request->comentario,
+                'puntos_obtenidos' => $puntos,
+                'completada' => $request->completada ?? true
+            ]);
+        } catch (\Exception $e) {
+            Log::error('Error al crear registro:', ['error' => $e->getMessage(), 'trace' => $e->getTraceAsString()]);
+            return response()->json([
+                'success' => false,
+                'message' => 'Error interno al guardar',
+                'error' => $e->getMessage()
+            ], 500);
+        }
 
         // Actualizar puntos totales del usuario
         $usuario = Usuario::find($request->id_usuario);
