@@ -81,7 +81,6 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/{id}', [RegistroConsumoController::class, 'destroy']);
         Route::get('/estadisticas/{idUsuario}', [RegistroConsumoController::class, 'estadisticas']);
         Route::get('/por-fecha/{idUsuario}', [RegistroConsumoController::class, 'porFecha']);
-        Route::get('/exportar-pdf', [RegistroConsumoController::class, 'exportarPDF']);
     });
 
     // Favoritos
@@ -275,6 +274,12 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('/asistidos/{idUsuario}', [InscripcionTallerController::class, 'asistidos']);
         Route::get('/cancelados/{idUsuario}', [InscripcionTallerController::class, 'cancelados']);
         Route::get('/estadisticas/{idUsuario}', [InscripcionTallerController::class, 'estadisticas']);
+    });
+
+    // Exportación de Datos
+    Route::prefix('exportacion')->group(function () {
+        Route::get('/actividad-pdf', [\App\Http\Controllers\ExportacionDatosController::class, 'exportarActividadPDF']);
+        Route::get('/consumo-pdf', [\App\Http\Controllers\ExportacionDatosController::class, 'exportarConsumoPDF']);
     });
 
     // Usuario actual
