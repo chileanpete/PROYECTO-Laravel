@@ -54,14 +54,15 @@ class TallerRecreativoController extends Controller
             'descripcion' => 'required|string|max:1000',
             'fecha_inicio' => 'required|date|after_or_equal:today',
             'fecha_fin' => 'required|date|after_or_equal:fecha_inicio',
-            'hora_inicio' => 'required|date_format:H:i',
-            'hora_fin' => 'required|date_format:H:i|after:hora_inicio',
-            'lugar' => 'required|string|max:200',
-            'capacidad_maxima' => 'required|integer|min:1',
-            'tipo_taller' => 'required|in:deportes,arte,musica,cocina,manualidades,tecnologia',
             'instructor' => 'required|string|max:100',
-            'precio' => 'required|numeric|min:0',
-            'imagen_url' => 'nullable|url|max:500'
+            'categoria' => 'required|string|max:100',
+            'duracion_minutos' => 'required|integer|min:1',
+            'nivel_dificultad' => 'required|integer|min:1|max:5',
+            'cupo_maximo' => 'required|integer|min:1',
+            'costo' => 'required|numeric|min:0',
+            'ubicacion' => 'required|string|max:200',
+            'imagen_url' => 'nullable|url|max:500',
+            'requisitos' => 'nullable|string|max:500'
         ]);
 
         if ($validator->fails()) {
@@ -77,16 +78,16 @@ class TallerRecreativoController extends Controller
             'descripcion' => $request->descripcion,
             'fecha_inicio' => $request->fecha_inicio,
             'fecha_fin' => $request->fecha_fin,
-            'hora_inicio' => $request->hora_inicio,
-            'hora_fin' => $request->hora_fin,
-            'lugar' => $request->lugar,
-            'capacidad_maxima' => $request->capacidad_maxima,
-            'capacidad_actual' => 0,
-            'tipo_taller' => $request->tipo_taller,
             'instructor' => $request->instructor,
-            'precio' => $request->precio,
+            'categoria' => $request->categoria,
+            'duracion_minutos' => $request->duracion_minutos,
+            'nivel_dificultad' => $request->nivel_dificultad,
+            'cupo_maximo' => $request->cupo_maximo,
+            'costo' => $request->costo,
+            'ubicacion' => $request->ubicacion,
             'activo' => true,
-            'imagen_url' => $request->imagen_url
+            'imagen_url' => $request->imagen_url,
+            'requisitos' => $request->requisitos
         ]);
 
         return response()->json([
@@ -115,15 +116,16 @@ class TallerRecreativoController extends Controller
             'descripcion' => 'string|max:1000',
             'fecha_inicio' => 'date',
             'fecha_fin' => 'date|after_or_equal:fecha_inicio',
-            'hora_inicio' => 'date_format:H:i',
-            'hora_fin' => 'date_format:H:i|after:hora_inicio',
-            'lugar' => 'string|max:200',
-            'capacidad_maxima' => 'integer|min:1',
-            'tipo_taller' => 'in:deportes,arte,musica,cocina,manualidades,tecnologia',
             'instructor' => 'string|max:100',
-            'precio' => 'numeric|min:0',
+            'categoria' => 'string|max:100',
+            'duracion_minutos' => 'integer|min:1',
+            'nivel_dificultad' => 'integer|min:1|max:5',
+            'cupo_maximo' => 'integer|min:1',
+            'costo' => 'numeric|min:0',
+            'ubicacion' => 'string|max:200',
             'activo' => 'boolean',
-            'imagen_url' => 'nullable|url|max:500'
+            'imagen_url' => 'nullable|url|max:500',
+            'requisitos' => 'nullable|string|max:500'
         ]);
 
         if ($validator->fails()) {
@@ -135,9 +137,9 @@ class TallerRecreativoController extends Controller
         }
 
         $taller->update($request->only([
-            'nombre', 'descripcion', 'fecha_inicio', 'fecha_fin', 'hora_inicio',
-            'hora_fin', 'lugar', 'capacidad_maxima', 'tipo_taller', 'instructor',
-            'precio', 'activo', 'imagen_url'
+            'nombre', 'descripcion', 'fecha_inicio', 'fecha_fin', 'instructor',
+            'categoria', 'duracion_minutos', 'nivel_dificultad', 'cupo_maximo',
+            'costo', 'ubicacion', 'activo', 'imagen_url', 'requisitos'
         ]));
 
         return response()->json([
@@ -174,15 +176,57 @@ class TallerRecreativoController extends Controller
      */
     public function activos(): JsonResponse
     {
-        $talleres = TallerRecreativo::where('activo', true)
-            ->where('fecha_fin', '>=', now()->toDateString())
-            ->orderBy('fecha_inicio', 'asc')
-            ->get();
+        try {
+            // Usar la misma consulta que funciona en el debug
+            $talleres = \DB::table('talleres_recreativos')
+                ->where('activo', 1)
+                ->get();
 
-        return response()->json([
-            'success' => true,
-            'data' => $talleres
-        ]);
+            return response()->json([
+                'success' => true,
+                'data' => $talleres,
+                'message' => 'Talleres activos obtenidos exitosamente',
+                'status_code' => 200,
+                'timestamp' => now()->toISOString()
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'data' => null,
+                'message' => 'Error interno del servidor: ' . $e->getMessage(),
+                'error' => $e->getMessage(),
+                'status_code' => 500,
+                'timestamp' => now()->toISOString()
+            ], 500);
+        }
+    }
+
+    /**
+     * Obtener talleres activos (versión simple)
+     */
+    public function activosSimple(): JsonResponse
+    {
+        try {
+            // Usar SQL directo para evitar problemas con Eloquent
+            $talleres = \DB::table('talleres_recreativos')
+                ->where('activo', 1)
+                ->select('*')
+                ->get();
+
+            return response()->json([
+                'success' => true,
+                'data' => $talleres,
+                'message' => 'Talleres obtenidos exitosamente (SQL directo)',
+                'count' => $talleres->count()
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error: ' . $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine()
+            ], 500);
+        }
     }
 
     /**
@@ -190,7 +234,7 @@ class TallerRecreativoController extends Controller
      */
     public function porTipo(string $tipo): JsonResponse
     {
-        $talleres = TallerRecreativo::where('tipo_taller', $tipo)
+        $talleres = TallerRecreativo::where('categoria', $tipo)
             ->where('activo', true)
             ->where('fecha_fin', '>=', now()->toDateString())
             ->orderBy('fecha_inicio', 'asc')
@@ -225,7 +269,6 @@ class TallerRecreativoController extends Controller
     {
         $talleres = TallerRecreativo::where('activo', true)
             ->where('fecha_fin', '>=', now()->toDateString())
-            ->whereRaw('capacidad_actual < capacidad_maxima')
             ->orderBy('fecha_inicio', 'asc')
             ->get();
 
@@ -242,7 +285,7 @@ class TallerRecreativoController extends Controller
     {
         $talleres = TallerRecreativo::where('activo', true)
             ->where('fecha_fin', '>=', now()->toDateString())
-            ->where('precio', 0)
+            ->where('costo', 0)
             ->orderBy('fecha_inicio', 'asc')
             ->get();
 
@@ -257,19 +300,32 @@ class TallerRecreativoController extends Controller
      */
     public function porUsuario(int $idUsuario): JsonResponse
     {
-        $talleres = TallerRecreativo::with(['inscripciones' => function($query) use ($idUsuario) {
-            $query->where('id_usuario', $idUsuario);
-        }])
-        ->whereHas('inscripciones', function($query) use ($idUsuario) {
-            $query->where('id_usuario', $idUsuario);
-        })
-        ->orderBy('fecha_inicio', 'desc')
-        ->get();
+        try {
+            \Log::info('TallerController: Iniciando obtención de talleres por usuario', ['user_id' => $idUsuario]);
+            
+            $talleres = TallerRecreativo::with(['inscripciones' => function($query) use ($idUsuario) {
+                $query->where('id_usuario', $idUsuario);
+            }])
+            ->whereHas('inscripciones', function($query) use ($idUsuario) {
+                $query->where('id_usuario', $idUsuario);
+            })
+            ->orderBy('fecha_inicio', 'desc')
+            ->get();
 
-        return response()->json([
-            'success' => true,
-            'data' => $talleres
-        ]);
+            \Log::info('TallerController: Talleres por usuario obtenidos', ['count' => $talleres->count()]);
+
+            return $this->successResponse($talleres, 'Talleres del usuario obtenidos exitosamente');
+        } catch (\Exception $e) {
+            \Log::error('TallerController: Error en porUsuario()', [
+                'user_id' => $idUsuario,
+                'message' => $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+                'trace' => $e->getTraceAsString()
+            ]);
+            
+            return $this->errorResponse('Error interno del servidor: ' . $e->getMessage(), 500);
+        }
     }
 
     /**
@@ -283,21 +339,47 @@ class TallerRecreativoController extends Controller
             'total_talleres' => $talleres->count(),
             'talleres_activos' => $talleres->where('fecha_fin', '>=', now()->toDateString())->count(),
             'talleres_vencidos' => $talleres->where('fecha_fin', '<', now()->toDateString())->count(),
-            'total_capacidad' => $talleres->sum('capacidad_maxima'),
-            'total_inscritos' => $talleres->sum('capacidad_actual'),
-            'total_ingresos' => $talleres->sum(\DB::raw('capacidad_actual * precio')),
-            'por_tipo' => $talleres->selectRaw('tipo_taller, COUNT(*) as total')
-                ->groupBy('tipo_taller')
+            'total_capacidad' => $talleres->sum('cupo_maximo'),
+            'por_categoria' => $talleres->selectRaw('categoria, COUNT(*) as total')
+                ->groupBy('categoria')
                 ->get(),
-            'talleres_llenos' => $talleres->whereRaw('capacidad_actual >= capacidad_maxima')->count(),
-            'talleres_disponibles' => $talleres->whereRaw('capacidad_actual < capacidad_maxima')
-                ->where('fecha_fin', '>=', now()->toDateString())->count(),
-            'promedio_precio' => round($talleres->avg('precio'), 2)
+            'promedio_costo' => round($talleres->avg('costo'), 2)
         ];
 
         return response()->json([
             'success' => true,
             'data' => $estadisticas
         ]);
+    }
+
+    /**
+     * Endpoint de prueba para debugging
+     */
+    public function test(): JsonResponse
+    {
+        try {
+            // Solo verificar tablas disponibles
+            $tables = \DB::select('SHOW TABLES');
+            
+            $data = [
+                'tablas_disponibles' => $tables,
+                'conexion_db' => 'OK',
+                'timestamp' => now()->toISOString(),
+                'server_status' => 'OK'
+            ];
+            
+            return response()->json([
+                'success' => true,
+                'data' => $data,
+                'message' => 'Test básico de base de datos'
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error en DB: ' . $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine()
+            ], 500);
+        }
     }
 }

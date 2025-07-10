@@ -152,12 +152,14 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::put('/{id}', [TallerRecreativoController::class, 'update']);
         Route::delete('/{id}', [TallerRecreativoController::class, 'destroy']);
         Route::get('/activos', [TallerRecreativoController::class, 'activos']);
+        Route::get('/activos-simple', [TallerRecreativoController::class, 'activosSimple']);
         Route::get('/tipo/{tipo}', [TallerRecreativoController::class, 'porTipo']);
         Route::get('/instructor/{instructor}', [TallerRecreativoController::class, 'porInstructor']);
         Route::get('/con-cupos', [TallerRecreativoController::class, 'conCupos']);
         Route::get('/gratuitos', [TallerRecreativoController::class, 'gratuitos']);
         Route::get('/usuario/{idUsuario}', [TallerRecreativoController::class, 'porUsuario']);
         Route::get('/estadisticas', [TallerRecreativoController::class, 'estadisticas']);
+        Route::get('/test', [TallerRecreativoController::class, 'test']);
     });
 
     // Recomendaciones
@@ -287,6 +289,77 @@ Route::get('/test', function () {
         'message' => 'API funcionando correctamente',
         'timestamp' => now()
     ]);
+});
+
+// Ruta de prueba para talleres fuera del controlador
+Route::get('/talleres-debug', function () {
+    try {
+        $tables = \DB::select('SHOW TABLES');
+        $talleres = \DB::table('talleres_recreativos')->get();
+        
+        return response()->json([
+            'success' => true,
+            'tables' => $tables,
+            'talleres_count' => $talleres->count(),
+            'message' => 'Debug exitoso'
+        ]);
+    } catch (\Exception $e) {
+        return response()->json([
+            'success' => false,
+            'error' => $e->getMessage(),
+            'line' => $e->getLine()
+        ], 500);
+    }
+});
+
+// SOLUCIÓN TEMPORAL: Endpoint de talleres activos que funciona
+Route::get('/talleres-activos-temp', function () {
+    try {
+        $talleres = \DB::table('talleres_recreativos')
+            ->where('activo', 1)
+            ->orderBy('id_taller', 'asc')
+            ->get();
+        
+        // Convertir los campos numéricos a los tipos correctos para Android
+        $talleresFormatted = $talleres->map(function ($taller) {
+            return [
+                'id_taller' => (int) $taller->id_taller,
+                'nombre' => $taller->nombre,
+                'descripcion' => $taller->descripcion,
+                'instructor' => $taller->instructor,
+                'categoria' => $taller->categoria,
+                'duracion_minutos' => (int) $taller->duracion_minutos,
+                'nivel_dificultad' => (int) $taller->nivel_dificultad,
+                'cupo_maximo' => (int) $taller->cupo_maximo,
+                'costo' => (float) $taller->costo,
+                'ubicacion' => $taller->ubicacion,
+                'fecha_inicio' => $taller->fecha_inicio,
+                'fecha_fin' => $taller->fecha_fin,
+                'activo' => (bool) $taller->activo, // Convertir a boolean
+                'imagen_url' => $taller->imagen_url,
+                'requisitos' => $taller->requisitos,
+                'created_at' => $taller->created_at,
+                'updated_at' => $taller->updated_at
+            ];
+        });
+        
+        return response()->json([
+            'success' => true,
+            'data' => $talleresFormatted,
+            'message' => 'Talleres activos obtenidos exitosamente',
+            'status_code' => 200,
+            'timestamp' => now()->toISOString()
+        ]);
+    } catch (\Exception $e) {
+        return response()->json([
+            'success' => false,
+            'data' => null,
+            'message' => 'Error interno del servidor: ' . $e->getMessage(),
+            'error' => $e->getMessage(),
+            'status_code' => 500,
+            'timestamp' => now()->toISOString()
+        ], 500);
+    }
 });
 
 // Ruta de prueba autenticada
