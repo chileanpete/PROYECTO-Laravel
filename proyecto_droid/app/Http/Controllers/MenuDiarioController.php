@@ -10,20 +10,52 @@ use Illuminate\Support\Facades\Validator;
 class MenuDiarioController extends Controller
 {
     /**
-     * Obtener menús de un usuario
+     * Obtener menús de un usuario (optimizado)
      */
     public function porUsuario(int $idUsuario): JsonResponse
     {
-        $menus = MenuDiario::with(['usuario', 'plato.lugar', 'plato.categoria'])
+        try {
+            // Optimizar consulta limitando campos y paginando
+            $menus = MenuDiario::select([
+                'id_menu',
+                'id_usuario', 
+                'fecha_menu',
+                'tipo_comida',
+                'id_plato',
+                'porcion_planificada',
+                'calorias_planificadas',
+                'completado',
+                'notas'
+            ])
+            ->with([
+                'plato:id_plato,nombre,precio,calorias_por_porcion,id_lugar,id_categoria',
+                'plato.lugar:id_lugar,nombre',
+                'plato.categoria:id_categoria,nombre'
+            ])
             ->where('id_usuario', $idUsuario)
             ->orderBy('fecha_menu', 'desc')
             ->orderBy('tipo_comida')
+            ->limit(100) // Límite para evitar respuestas muy grandes
             ->get();
 
-        return response()->json([
-            'success' => true,
-            'data' => $menus
-        ]);
+            return response()->json([
+                'success' => true,
+                'data' => $menus,
+                'total' => $menus->count()
+            ]);
+            
+        } catch (\Exception $e) {
+            \Log::error('Error en porUsuario: ' . $e->getMessage(), [
+                'usuario' => $idUsuario,
+                'trace' => $e->getTraceAsString()
+            ]);
+
+            return response()->json([
+                'success' => false,
+                'message' => 'Error interno del servidor',
+                'error' => 'Error al cargar menús del usuario'
+            ], 500);
+        }
     }
 
     /**
@@ -156,32 +188,65 @@ class MenuDiarioController extends Controller
     }
 
     /**
-     * Obtener menús por fecha
+     * Obtener menús por fecha (optimizado)
      */
     public function porFecha(Request $request, int $idUsuario): JsonResponse
     {
-        $validator = Validator::make($request->all(), [
-            'fecha' => 'required|date'
-        ]);
+        try {
+            $validator = Validator::make($request->all(), [
+                'fecha' => 'required|date'
+            ]);
 
-        if ($validator->fails()) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Fecha requerida',
-                'errors' => $validator->errors()
-            ], 422);
-        }
+            if ($validator->fails()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Fecha requerida',
+                    'errors' => $validator->errors()
+                ], 422);
+            }
 
-        $menus = MenuDiario::with(['plato.lugar', 'plato.categoria'])
+            // Optimizar consulta cargando solo campos esenciales
+            $menus = MenuDiario::select([
+                'id_menu',
+                'id_usuario', 
+                'fecha_menu',
+                'tipo_comida',
+                'id_plato',
+                'porcion_planificada',
+                'calorias_planificadas',
+                'completado',
+                'notas'
+            ])
+            ->with([
+                'plato:id_plato,nombre,precio,calorias_por_porcion,id_lugar,id_categoria',
+                'plato.lugar:id_lugar,nombre',
+                'plato.categoria:id_categoria,nombre'
+            ])
             ->where('id_usuario', $idUsuario)
             ->where('fecha_menu', $request->fecha)
             ->orderBy('tipo_comida')
+            ->limit(50) // Límite de seguridad
             ->get();
 
-        return response()->json([
-            'success' => true,
-            'data' => $menus
-        ]);
+            return response()->json([
+                'success' => true,
+                'data' => $menus,
+                'total' => $menus->count()
+            ]);
+
+        } catch (\Exception $e) {
+            \Log::error('Error en porFecha: ' . $e->getMessage(), [
+                'usuario' => $idUsuario,
+                'fecha' => $request->fecha ?? 'no_fecha',
+                'trace' => $e->getTraceAsString()
+            ]);
+
+            return response()->json([
+                'success' => false,
+                'message' => 'Error interno del servidor',
+                'error' => 'Error al cargar menús para la fecha especificada'
+            ], 500);
+        }
     }
 
     /**

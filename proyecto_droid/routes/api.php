@@ -21,6 +21,7 @@ use App\Http\Controllers\RutinaEjercicioController;
 use App\Http\Controllers\UsuarioDesafioController;
 use App\Http\Controllers\UsuarioEventoController;
 use App\Http\Controllers\InscripcionTallerController;
+use App\Http\Controllers\MenuFavoritoUsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -100,6 +101,16 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('/por-fecha/{idUsuario}', [MenuDiarioController::class, 'porFecha']);
         Route::patch('/{id}/completar', [MenuDiarioController::class, 'marcarCompletado']);
         Route::post('/resumen-semanal/{idUsuario}', [MenuDiarioController::class, 'resumenSemanal']);
+    });
+
+    // Menús Favoritos del Usuario
+    Route::prefix('menus-favoritos')->group(function () {
+        Route::get('/usuario/{idUsuario}', [MenuFavoritoUsuarioController::class, 'porUsuario']);
+        Route::post('/', [MenuFavoritoUsuarioController::class, 'store']);
+        Route::post('/{idMenuFavorito}/platos', [MenuFavoritoUsuarioController::class, 'agregarPlato']);
+        Route::delete('/{idMenuFavorito}/platos/{idPlato}', [MenuFavoritoUsuarioController::class, 'eliminarPlato']);
+        Route::delete('/{idMenuFavorito}', [MenuFavoritoUsuarioController::class, 'destroy']);
+        Route::patch('/{idMenuFavorito}/usar', [MenuFavoritoUsuarioController::class, 'usar']);
     });
 
     // Objetivos de Alimentación
